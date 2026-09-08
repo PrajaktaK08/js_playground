@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Js Playground</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a  class="logo">
+                <span class="logo-mark">Js</span>
+                <span class="logo-text">Playground</span>
+             </a>
+
+             <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded = "false"
+                area-controls="mainNavigation"
+            >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+             
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar" id ="mainNavigation">
+             <nav class="sidebar-nav"
+             aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="#concepts" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#quiz" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul> 
+            </nav>
+                
+            </aside>
+
+            <main class="main-content" id="main-content">
+                 <section 
+                    class="hero-section"
+                    id="dashboard"
+                    aria-labelledby="dashboard-title"
+                    >
+                <p class="eyebrow">Javascript Interview Preparation</p>
+                    <h1 id="dashboard-title">
+                    Master JavaScript by understanding how it works.
+                </h1>
+                <p class="hero-description">
+                    Practice concepts, solve coding problems, debug real
+                    JavaScript, and understand what happens behind the scenes.
+                </p>
+                 </section>
+
+                 <section 
+                    class="stats-sectior"
+                    aria-labelledby="stats-title"
+                 >
+                 <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Overview</p>
+                        <h2 id="stats-title">Your Dashboard</h2>
+                    </div>
+                 </div>
+
+                 <div class="stats-grid">
+                    <article class="stat-card">
+                    <p class="stat-label">Topics</p>
+                    <strong class="stat-value">24</strong>
+                    <span class="stat-description">
+                        Javascript concepts
+
+                    </span>
+                    </article>
+
+                    <article class="stat-card">
+                        <p class="stat-label">Progress</p>
+                        <strong class="stat-value">0%</strong>
+                        <span class="stat-description">
+                            Keep learning
+                        </span>
+                    </article>
+
+                     <article class="stat-card">
+                        <p class="stat-label">Challenges</p>
+                        <strong class="stat-value">0</strong>
+                        <span class="stat-description">
+                            Completed
+                        </span>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <p class="stat-label">Quiz Score</p>
+                        <strong class="stat-value">—</strong>
+                        <span class="stat-description">
+                            No attempts yet
+                        </span>
+                    </article>
+
+                 </div>
+                 </section>
+
+                 <section
+                  class="topics-section"
+                id="concepts"
+                aria-labelledby="topics-title"
+                >
+                <div class="section-heading">
+                    <div>
+                          <p class="eyebrow">Learn</p>
+                        <h2 id="topics-title">JavaScript Topics</h2>
+                    </div>
+
+                </div>
+                <div class="topics-grid">
+                    <article class="topic-card">
+                        <span class="topic-number">01</span>
+                        <h3>Variables & Scope</h3>
+                        <p>
+                            Understand var, let, const, scope and hoisting.
+                        </p>
+                    </article>
+                        <article class="topic-card">
+                        <span class="topic-number">02</span>
+                        <h3>Functions</h3>
+                        <p>
+                            Explore functions, callbacks and higher-order functions.
+                        </p>
+                    </article>
+                      <article class="topic-card">
+                        <span class="topic-number">03</span>
+                        <h3>Closures</h3>
+                        <p>
+                            Understand lexical scope and how closures retain state.
+                        </p>
+                    </article>
+                       <article class="topic-card">
+                        <span class="topic-number">04</span>
+                        <h3>this</h3>
+                        <p>
+                            Learn how JavaScript determines the value of this.
+                        </p>
+                    </article>
+                     <article class="topic-card">
+                        <span class="topic-number">05</span>
+                        <h3>Prototypes</h3>
+                        <p>
+                            Understand prototype chains, new and inheritance.
+                        </p>
+                    </article>
+                       <article class="topic-card">
+                        <span class="topic-number">06</span>
+                        <h3>Async JavaScript</h3>
+                        <p>
+                            Learn promises, async/await and the event loop.
+                        </p>
+                    </article>
+                </div>
+
+                 </section>
+                   <section
+                class="progress-section"
+                id="progress"
+                aria-labelledby="progress-title"
+            >
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Keep going</p>
+                        <h2 id="progress-title">Learning Progress</h2>
+                    </div>
+                </div>
+
+
+                <article class="progress-card">
+
+                    <div class="progress-header">
+                        <div>
+                            <h3>JavaScript Fundamentals</h3>
+                            <p>0 of 24 topics completed</p>
+                        </div>
+
+                        <strong>0%</strong>
+                    </div>
+
+
+                    <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-label="JavaScript learning progress"
+                    >
+                        <span class="progress-fill"></span>
+                    </div>
+
+                </article>
+
+            </section>
+
+            </main>
+       
+
+    </div>
+</body>
+</html>
