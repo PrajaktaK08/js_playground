@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+        name="description"
+        content="Practice JavaScript interview questions with the JavaScript Interview Playground."
+    >
+
+    <title>QuInterview Quiz | JS Playgroundiz</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+  <header class="site-header">
+        <div class="container header-content">
+            <a  class="logo">
+                <span class="logo-mark">Js</span>
+                <span class="logo-text">Playground</span>
+             </a>
+
+             <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded = "false"
+                area-controls="mainNavigation"
+            >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+             
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+       <div class="app-layout">
+       <aside class="sidebar" id ="mainNavigation">
+             <nav class="sidebar-nav"
+             aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="#concepts" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul> 
+            </nav>
+                
+            </aside>
+           
+
+        <!-- Quiz  -->
+        <main class="main-content">
+            <section 
+                class="quiz-section"
+                aria-labelledby="quizTitle">
+                <!-- Quiz Heading -->
+                 <div class="quiz-header">
+                    <div class="quiz-heading">
+                        <span class="section-label">
+                            JAVASCRIPT QUIZ 
+                        </span>
+                        <h1 id="quizTitle">
+                            Test Your JavaScript Knowledge 
+                        </h1>
+                        <p>
+                           Practice common JavaScript interview
+                            questions and strengthen your fundamentals.  
+                        </p>
+                    </div>
+                    <div class="quiz-counter"
+                        aria-live="polite">
+                        <span class="quiz-counter-label">
+                            Question
+                        </span>
+                        <strong id="questionCounter">
+                            1/10
+                        </strong>
+                    </div>
+                 </div>
+                 <!-- Quiz card -->
+                  <div class="quiz-card"
+                    id="quizCard">
+                    <!-- Progress -->
+                     <div class="quiz-progress-wrapper">
+                        <div class="progress-meta">
+                            <span>Your Progress</span>
+                            <span id="progressPercentage">10%</span>
+                        </div>
+                        <div 
+                            class="quiz-progress"
+                            role="progressbar"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="10"
+                            aria-label="Quiz progress"
+                        >
+                        <div class="quiz-progress-fill"
+                        id="progressFill"
+                        ></div>
+
+                        </div>
+                     </div>
+
+                     <!-- Question -->
+                      <div class="question-container">
+                        <span  class="question-number"
+                            id="questionNumber"
+                            >Question 1</span>
+                            <h2 class="question-text" id="questionText"></h2>
+                            <div class="options-container" id="optionsContainer"></div>
+
+                      </div>
+                      <!-- Actions -->
+                       <div class="quiz-actions">
+                        <button 
+                        type="button"
+                        class="btn btn-secondary"
+                        id="previousQuestion"
+                        disabled>
+                        ← Previous
+                        </button>
+                           <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="nextQuestion"
+                            disabled
+                        >
+                            Next Question →
+                        </button>
+                       </div>
+                </div>
+                <!-- Result -->
+                 <div class="result-card hidden"
+                 id="resultCard">
+                 <div class="result-icon"
+                 aria-hidden="true"
+                 >
+                  ✓
+                 </div>
+                  <span class="section-label">
+                        QUIZ COMPLETE
+                    </span>
+                    <h2> Great work!</h2>
+                <p class="result-description">
+                        You have completed the JavaScript quiz.
+                    </p>
+
+                    <div class="score-display">
+                         <span class="score-label">
+                            Your Score
+                        </span>
+                            <strong id="finalScore">
+                            0 / 10
+                        </strong>
+                         <span
+                            class="score-percentage"
+                            id="finalPercentage"
+                        >
+                            0%
+                        </span>
+                    </div>
+                    <div class="result-stats">
+                        <div class="result-stat">
+                              <span
+                                class="result-stat-value"
+                                id="correctCount"
+                            >
+                                0
+                            </span>
+                                 <span class="result-stat-label">
+                                Correct
+                            </span>
+                        </div>
+                        <div class="result-stat">
+                            <span
+                                class="result-stat-value"
+                                id="wrongCount"
+                            >
+                                0
+                            </span>
+
+                            <span class="result-stat-label">
+                                Wrong
+                            </span>
+                        </div>
+                    </div>
+                     <button
+                        type="button"
+                        class="btn btn-primary result-retry"
+                        id="retryQuiz"
+                    >
+                        ↻ Retry Quiz
+                    </button>
+
+
+                </div>
+            </section>
+        </main>
+         </div>
+
+        <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    
+    <!-- Global JavaScript -->
+    <script src="../js/app.js"></script>
+
+    <!-- Quiz JavaScript -->
+    <script src="../js/quiz.js"></script>
+
+    
+</body>
+
+</html>
