@@ -1,0 +1,1765 @@
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/concept-page.css">
+</head>
+<body>
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="../../index.html" class="logo">
+                <span class="logo-mark">JS</span>
+
+                <span class="logo-text">
+                    JavaScript
+                    <small>Interview Playground</small>
+                </span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+    <div class="app-layout">
+        <aside class="sidebar" id="mainNavigation">
+            <nav class="sidebar-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/concepts.html" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="concept-detail-page">
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <a href="../concepts.html">
+            Concepts
+        </a>
+
+        <span aria-hidden="true">/</span>
+
+        <span>Functions</span>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONCEPT HEADER
+         ===================================================== -->
+
+    <section class="concept-header">
+
+        <div class="concept-header-number">
+            07
+        </div>
+
+        <div class="concept-header-content">
+
+            <span class="concept-label">
+                JavaScript Fundamentals
+            </span>
+
+            <h1>
+                Functions
+            </h1>
+
+            <p>
+                Learn how JavaScript functions group reusable logic,
+                accept input, perform operations and return results.
+            </p>
+
+            <div class="concept-meta">
+
+                <span class="meta-badge">
+                    Beginner
+                </span>
+
+                <span class="meta-badge">
+                    Core JavaScript
+                </span>
+
+                <span class="meta-badge">
+                    Interview Essential
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION NAVIGATION
+         ===================================================== -->
+
+    <nav class="section-navigation" aria-label="Concept sections">
+
+        <a href="#definition">Definition</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#types">Types</a>
+        <a href="#parameters">Parameters</a>
+        <a href="#examples">Examples</a>
+        <a href="#use-case">Real Life</a>
+        <a href="#interview">Interview</a>
+        <a href="#challenge">Challenge</a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         01. DEFINITION
+         ===================================================== -->
+
+    <section class="concept-section" id="definition">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Foundation
+                </p>
+
+                <h2>
+                    What are functions?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="definition-grid">
+
+            <article class="definition-card">
+
+                <span class="definition-icon">?</span>
+
+                <h3>
+                    What?
+                </h3>
+
+                <p>
+                    A function is a reusable block of code designed to
+                    perform a specific task. A function can receive input,
+                    execute logic and optionally return a result.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⏱</span>
+
+                <h3>
+                    When?
+                </h3>
+
+                <p>
+                    Use a function whenever a piece of logic needs to be
+                    reused, organized or separated into a specific task.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">💡</span>
+
+                <h3>
+                    Why?
+                </h3>
+
+                <p>
+                    Functions reduce code duplication, improve readability,
+                    make code easier to test and divide large programs into
+                    smaller manageable pieces.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⚙</span>
+
+                <h3>
+                    How?
+                </h3>
+
+                <p>
+                    Define a function, provide parameters if required,
+                    write the required logic and call the function whenever
+                    you need that logic.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02. SYNTAX
+         ===================================================== -->
+
+    <section class="concept-section" id="syntax">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Fundamentals
+                </p>
+
+                <h2>
+                    Function syntax
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="syntax-card">
+
+            <div class="code-header">
+                <span>JavaScript</span>
+            </div>
+
+            <pre><code>function functionName(parameters) {
+
+    // code to execute
+
+    return value;
+}
+
+
+functionName(arguments);</code></pre>
+
+        </div>
+
+
+        <div class="syntax-note">
+
+            <strong>Remember:</strong>
+
+            <span>
+                Defining a function does not execute it. The function runs
+                when it is called.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03. TYPES OF FUNCTIONS
+         ===================================================== -->
+
+    <section class="concept-section" id="types">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Core concepts
+                </p>
+
+                <h2>
+                    Types of functions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- FUNCTION DECLARATION -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 01
+                </span>
+
+                <h3>
+                    Function Declaration
+                </h3>
+
+                <p>
+                    A function declaration defines a named function using
+                    the <code>function</code> keyword.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function greet() {
+
+    console.log("Hello JavaScript!");
+
+}
+
+greet();
+
+// Hello JavaScript!</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- FUNCTION EXPRESSION -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 02
+                </span>
+
+                <h3>
+                    Function Expression
+                </h3>
+
+                <p>
+                    A function can be assigned to a variable. This is called
+                    a function expression.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const greet = function () {
+
+    console.log("Hello!");
+
+};
+
+greet();</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARROW FUNCTION -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 03
+                </span>
+
+                <h3>
+                    Arrow Function
+                </h3>
+
+                <p>
+                    Arrow functions provide a shorter syntax for writing
+                    functions and have important differences in how
+                    <code>this</code> works.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const add = (a, b) => {
+
+    return a + b;
+
+};
+
+console.log(add(10, 20));
+// 30</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMPLICIT RETURN -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 04
+                </span>
+
+                <h3>
+                    Arrow Function with Implicit Return
+                </h3>
+
+                <p>
+                    If an arrow function contains only one expression,
+                    the value can be returned without using
+                    <code>return</code>.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const multiply = (a, b) => a * b;
+
+console.log(multiply(5, 4));
+// 20</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- ANONYMOUS FUNCTION -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 05
+                </span>
+
+                <h3>
+                    Anonymous Function
+                </h3>
+
+                <p>
+                    An anonymous function is a function without its own
+                    function name. It is commonly used as a callback.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>setTimeout(function () {
+
+    console.log("Executed later");
+
+}, 1000);</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- CALLBACK -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 06
+                </span>
+
+                <h3>
+                    Callback Function
+                </h3>
+
+                <p>
+                    A callback is a function passed to another function as
+                    an argument so that it can be executed later or at a
+                    specific point.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function processUser(name, callback) {
+
+    console.log("User:", name);
+
+    callback();
+
+}
+
+processUser("Amit", function () {
+
+    console.log("Processing completed");
+
+});</code></pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         04. PARAMETERS AND ARGUMENTS
+         ===================================================== -->
+
+    <section class="concept-section" id="parameters">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Function inputs
+                </p>
+
+                <h2>
+                    Parameters and arguments
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- PARAMETERS -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Concept 01
+                </span>
+
+                <h3>
+                    Parameters
+                </h3>
+
+                <p>
+                    Parameters are variables defined in the function
+                    declaration. They represent the input that a function
+                    expects.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function greet(name) {
+
+    console.log("Hello", name);
+
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARGUMENTS -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Concept 02
+                </span>
+
+                <h3>
+                    Arguments
+                </h3>
+
+                <p>
+                    Arguments are the actual values passed to a function
+                    when the function is called.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function greet(name) {
+
+    console.log("Hello", name);
+
+}
+
+greet("Prajakta");</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- DEFAULT PARAMETERS -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Concept 03
+                </span>
+
+                <h3>
+                    Default Parameters
+                </h3>
+
+                <p>
+                    A default parameter provides a fallback value when no
+                    argument or an <code>undefined</code> value is passed.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function greet(name = "Guest") {
+
+    console.log(`Hello, ${name}`);
+
+}
+
+greet();
+// Hello, Guest
+
+greet("Amit");
+// Hello, Amit</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- REST PARAMETERS -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Concept 04
+                </span>
+
+                <h3>
+                    Rest Parameters
+                </h3>
+
+                <p>
+                    Rest parameters allow a function to accept any number
+                    of arguments and collect them into an array.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function calculateSum(...numbers) {
+
+    let total = 0;
+
+    for (const number of numbers) {
+        total += number;
+    }
+
+    return total;
+}
+
+console.log(calculateSum(10, 20, 30));
+// 60</code></pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         05. RETURN VALUE
+         ===================================================== -->
+
+    <section class="concept-section" id="return">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Function output
+                </p>
+
+                <h2>
+                    Return statement
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="syntax-card">
+
+            <div class="code-header">
+                <span>JavaScript</span>
+            </div>
+
+            <pre><code>function add(a, b) {
+
+    return a + b;
+
+}
+
+const result = add(10, 20);
+
+console.log(result);
+// 30</code></pre>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Important:</strong>
+                When JavaScript reaches a <code>return</code> statement,
+                the function immediately stops executing and sends the
+                returned value back to the caller.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06. COMMON FUNCTION EXAMPLES
+         ===================================================== -->
+
+    <section class="concept-section" id="examples">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Learn by doing
+                </p>
+
+                <h2>
+                    Common function examples
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- CALCULATOR -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    Create a calculator function
+                </h3>
+
+                <p>
+                    Functions are useful for separating individual
+                    operations into reusable pieces.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+console.log(add(10, 5));
+// 15
+
+console.log(subtract(10, 5));
+// 5
+
+console.log(multiply(10, 5));
+// 50</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- EVEN NUMBER -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    Check whether a number is even
+                </h3>
+
+                <p>
+                    A function can encapsulate a condition and return a
+                    boolean result.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function isEven(number) {
+
+    return number % 2 === 0;
+
+}
+
+console.log(isEven(10));
+// true
+
+console.log(isEven(7));
+// false</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- FACTORIAL -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    Calculate factorial
+                </h3>
+
+                <p>
+                    Functions can combine loops and calculations to solve
+                    reusable problems.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function factorial(number) {
+
+    let result = 1;
+
+    for (let i = 1; i &lt;= number; i++) {
+
+        result *= i;
+
+    }
+
+    return result;
+}
+
+console.log(factorial(5));
+// 120</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- INTERACTIVE -->
+
+        <article class="interactive-example">
+
+            <div class="interactive-header">
+
+                <div>
+
+                    <span class="example-number">
+                        Interactive
+                    </span>
+
+                    <h3>
+                        Experiment with functions
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="reset-code-btn"
+                    data-reset-editor="functionEditor"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <label for="functionEditor">
+                JavaScript code
+            </label>
+
+
+            <textarea
+                id="functionEditor"
+                class="code-editor"
+                spellcheck="false"
+            >function calculateDiscount(price, discount) {
+
+    return price - (price * discount / 100);
+
+}
+
+const finalPrice = calculateDiscount(1000, 20);
+
+console.log("Final Price:", finalPrice);</textarea>
+
+
+            <div class="editor-actions">
+
+                <button
+                    type="button"
+                    class="run-button"
+                    data-run-editor="functionEditor"
+                    data-output="functionOutput"
+                >
+                    ▶ Run Code
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-button"
+                    data-clear-output="functionOutput"
+                >
+                    Clear Output
+                </button>
+
+            </div>
+
+
+            <div class="output-panel">
+
+                <div class="output-header">
+                    <span>
+                        Console Output
+                    </span>
+                </div>
+
+                <pre id="functionOutput">Click "Run Code" to see the output.</pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         07. REAL LIFE USE CASE
+         ===================================================== -->
+
+    <section class="concept-section" id="use-case">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Practical JavaScript
+                </p>
+
+                <h2>
+                    Real-life use case
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    E-Commerce
+                </span>
+
+                <h3>
+                    Calculate final product price
+                </h3>
+
+                <p>
+                    An online shopping application can use separate
+                    functions for calculating discounts, taxes and the
+                    final price.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function calculateDiscount(price, discount) {
+
+    return price * discount / 100;
+
+}
+
+function calculateTax(price, taxRate) {
+
+    return price * taxRate / 100;
+
+}
+
+function calculateFinalPrice(price, discount, taxRate) {
+
+    const discountAmount =
+        calculateDiscount(price, discount);
+
+    const discountedPrice =
+        price - discountAmount;
+
+    const tax =
+        calculateTax(discountedPrice, taxRate);
+
+    return discountedPrice + tax;
+}
+
+const finalPrice =
+    calculateFinalPrice(2000, 10, 18);
+
+console.log("Final Price:", finalPrice);</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Interview tip:</strong>
+                Good functions generally have one clear responsibility.
+                Instead of creating one huge function, divide complex
+                operations into smaller reusable functions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08. INTERVIEW QUESTIONS
+         ===================================================== -->
+
+    <section class="concept-section" id="interview">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Interview preparation
+                </p>
+
+                <h2>
+                    Top 5 interview questions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="questions-list">
+
+
+            <!-- QUESTION 01 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        01
+                    </span>
+
+                    <span>
+                        What is the difference between parameters and arguments?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Parameters are variables defined in a function
+                        declaration. Arguments are the actual values passed
+                        to the function when it is called.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function greet(name) {
+    // name is a parameter
+}
+
+greet("Amit");
+// "Amit" is an argument</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 02 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        02
+                    </span>
+
+                    <span>
+                        What is the difference between function declaration and function expression?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        A function declaration creates a named function
+                        directly. A function expression creates a function
+                        and assigns it to a variable.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function add(a, b) {
+    return a + b;
+}
+
+
+const subtract = function (a, b) {
+    return a - b;
+};</code></pre>
+
+                    </div>
+
+                    <p>
+                        Function declarations are hoisted with their
+                        function body, while function expressions assigned
+                        to variables are subject to the initialization rules
+                        of those variables.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 03 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        03
+                    </span>
+
+                    <span>
+                        What is an arrow function?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        An arrow function is a shorter function syntax
+                        introduced in modern JavaScript. Unlike regular
+                        functions, arrow functions do not have their own
+                        <code>this</code>, <code>arguments</code>,
+                        <code>super</code> or <code>new.target</code>.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>const square = number => number * number;
+
+console.log(square(5));
+// 25</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 04 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        04
+                    </span>
+
+                    <span>
+                        What happens when a function does not return a value?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        A function that reaches the end without returning a
+                        value returns <code>undefined</code>.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function greet() {
+
+    console.log("Hello");
+
+}
+
+const result = greet();
+
+console.log(result);
+// undefined</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 05 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        05
+                    </span>
+
+                    <span>
+                        What is a callback function?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        A callback is a function passed to another function
+                        as an argument. The receiving function can execute
+                        the callback when needed.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function processData(callback) {
+
+    console.log("Processing...");
+
+    callback();
+
+}
+
+processData(function () {
+
+    console.log("Completed");
+
+});</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09. CODING CHALLENGE
+         ===================================================== -->
+
+    <section class="concept-section" id="challenge">
+
+        <div class="section-heading">
+
+            <span>09</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Code in an interview
+                </p>
+
+                <h2>
+                    Interview coding challenge
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="challenge-card">
+
+
+            <div class="challenge-description">
+
+                <span class="challenge-label">
+                    Coding Challenge
+                </span>
+
+                <h3>
+                    Create a reusable calculator function
+                </h3>
+
+                <p>
+                    Create a function named
+                    <code>calculate</code> that accepts two numbers and
+                    an operator. It should perform addition, subtraction,
+                    multiplication or division.
+                </p>
+
+
+                <div class="expected-output">
+
+                    <h4>
+                        Examples
+                    </h4>
+
+                    <pre>calculate(10, 5, "+")
+→ 15
+
+calculate(10, 5, "-")
+→ 5
+
+calculate(10, 5, "*")
+→ 50
+
+calculate(10, 5, "/")
+→ 2</pre>
+
+                </div>
+
+            </div>
+
+
+            <div class="challenge-editor">
+
+                <label for="functionChallengeEditor">
+                    Write your solution
+                </label>
+
+
+                <textarea
+                    id="functionChallengeEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                >function calculate(a, b, operator) {
+
+    // Write your solution here
+
+}
+
+
+console.log("Result:", calculate(10, 5, "+"));
+</textarea>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        data-run-editor="functionChallengeEditor"
+                        data-output="functionChallengeOutput"
+                    >
+                        ▶ Run Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hint-button"
+                        data-hint-target="functionHint"
+                    >
+                        💡 Hint
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="hint-box"
+                    id="functionHint"
+                    hidden
+                >
+                    Use a <code>switch</code> statement or
+                    <code>if...else</code> statements to check the
+                    operator and return the appropriate calculation.
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="output-header">
+                        <span>
+                            Console Output
+                        </span>
+                    </div>
+
+                    <pre id="functionChallengeOutput">Run your solution to see the output.</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TAKEAWAY
+         ===================================================== -->
+
+    <section class="takeaway-section">
+
+        <div class="takeaway-card">
+
+            <span class="takeaway-icon">
+                🎯
+            </span>
+
+
+            <div>
+
+                <p class="section-kicker">
+                    Remember
+                </p>
+
+                <h2>
+                    Functions turn repeated logic into reusable building blocks.
+                </h2>
+
+                <p>
+                    Master function declarations, function expressions,
+                    arrow functions, parameters, arguments, return values,
+                    default parameters, rest parameters and callbacks.
+                    These concepts are fundamental to almost every part of
+                    modern JavaScript.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGINATION
+         ===================================================== -->
+
+    <nav
+        class="concept-pagination"
+        aria-label="Concept pagination"
+    >
+
+        <a
+            href="loops.html"
+            class="pagination-link"
+        >
+
+            <span>←</span>
+
+            <div>
+
+                <small>
+                    Previous Concept
+                </small>
+
+                <strong>
+                    Loops
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="scope.html"
+            class="pagination-link next"
+        >
+
+            <div>
+
+                <small>
+                    Next Concept
+                </small>
+
+                <strong>
+                    Scope
+                </strong>
+
+            </div>
+
+            <span>→</span>
+
+        </a>
+
+    </nav>
+
+</main>
+ 
+ <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+    </div>
+ <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+
+</body>
+
+</html>

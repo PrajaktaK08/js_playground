@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/concept-page.css">
+</head>
+<body>
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="../../index.html" class="logo">
+                <span class="logo-mark">JS</span>
+
+                <span class="logo-text">
+                    JavaScript
+                    <small>Interview Playground</small>
+                </span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+    <div class="app-layout">
+        <aside class="sidebar" id="mainNavigation">
+            <nav class="sidebar-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/concepts.html" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        
+<main class="concept-detail-page">
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <a href="../concepts.html">
+            Concepts
+        </a>
+
+        <span aria-hidden="true">/</span>
+
+        <span>Hoisting</span>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONCEPT HEADER
+         ===================================================== -->
+
+    <section class="concept-header">
+
+        <div class="concept-header-number">
+            09
+        </div>
+
+        <div class="concept-header-content">
+
+            <span class="concept-label">
+                JavaScript Fundamentals
+            </span>
+
+            <h1>
+                Hoisting
+            </h1>
+
+            <p>
+                Understand how JavaScript handles declarations before code
+                execution and why function declarations, var, let and const
+                behave differently.
+            </p>
+
+            <div class="concept-meta">
+
+                <span class="meta-badge">
+                    Intermediate
+                </span>
+
+                <span class="meta-badge">
+                    Execution
+                </span>
+
+                <span class="meta-badge">
+                    Interview Essential
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION NAVIGATION
+         ===================================================== -->
+
+    <nav class="section-navigation" aria-label="Concept sections">
+
+        <a href="#definition">Definition</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#var">var</a>
+        <a href="#let-const">let &amp; const</a>
+        <a href="#functions">Functions</a>
+        <a href="#examples">Examples</a>
+        <a href="#use-case">Real Life</a>
+        <a href="#interview">Interview</a>
+        <a href="#challenge">Challenge</a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         01. DEFINITION
+         ===================================================== -->
+
+    <section class="concept-section" id="definition">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Foundation
+                </p>
+
+                <h2>
+                    What is hoisting?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="definition-grid">
+
+            <article class="definition-card">
+
+                <span class="definition-icon">?</span>
+
+                <h3>
+                    What?
+                </h3>
+
+                <p>
+                    Hoisting describes JavaScript's behavior of processing
+                    declarations during the creation of an execution context
+                    before executing the associated code.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⏱</span>
+
+                <h3>
+                    When?
+                </h3>
+
+                <p>
+                    Hoisting is relevant whenever JavaScript encounters
+                    variable, function, class or module declarations during
+                    execution.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">💡</span>
+
+                <h3>
+                    Why?
+                </h3>
+
+                <p>
+                    Understanding hoisting helps explain why some identifiers
+                    can be referenced before their declaration while others
+                    produce an error.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⚙</span>
+
+                <h3>
+                    How?
+                </h3>
+
+                <p>
+                    Before executing statements, JavaScript creates an
+                    execution context and establishes bindings for relevant
+                    declarations. The exact behavior depends on the type of
+                    declaration.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02. SYNTAX / BASIC IDEA
+         ===================================================== -->
+
+    <section class="concept-section" id="syntax">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Fundamentals
+                </p>
+
+                <h2>
+                    Basic idea of hoisting
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="syntax-card">
+
+            <div class="code-header">
+                <span>JavaScript</span>
+            </div>
+
+            <pre><code>console.log(name);
+
+var name = "Amit";
+
+// Output:
+// undefined
+
+
+greet();
+
+function greet() {
+
+    console.log("Hello");
+
+}
+
+// Output:
+// Hello</code></pre>
+
+        </div>
+
+
+        <div class="syntax-note">
+
+            <strong>Important:</strong>
+
+            <span>
+                Hoisting does not literally move your source-code lines to
+                the top. It describes how declarations are handled during
+                execution-context setup.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03. VAR HOISTING
+         ===================================================== -->
+
+    <section class="concept-section" id="var">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Variable declarations
+                </p>
+
+                <h2>
+                    Hoisting with var
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    var is hoisted and initialized with undefined
+                </h3>
+
+                <p>
+                    A <code>var</code> declaration is processed before the
+                    execution of the surrounding code, and its initial value
+                    is <code>undefined</code> until the assignment executes.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>console.log(score);
+
+var score = 100;
+
+console.log(score);
+
+// undefined
+// 100</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Concept
+                </span>
+
+                <h3>
+                    Declaration vs assignment
+                </h3>
+
+                <p>
+                    It is useful to mentally separate the declaration from
+                    the assignment when understanding <code>var</code>
+                    hoisting.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>Conceptual model</span>
+                </div>
+
+                <pre><code>var score;
+
+console.log(score);
+// undefined
+
+score = 100;
+
+console.log(score);
+// 100</code></pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         04. LET AND CONST
+         ===================================================== -->
+
+    <section class="concept-section" id="let-const">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Block-scoped declarations
+                </p>
+
+                <h2>
+                    Hoisting with let and const
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    Temporal Dead Zone
+                </h3>
+
+                <p>
+                    <code>let</code> and <code>const</code> bindings are
+                    created when their scope is initialized, but they cannot
+                    be accessed before the declaration is evaluated. This
+                    period is called the Temporal Dead Zone, or TDZ.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>console.log(name);
+
+let name = "Amit";
+
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    const behaves similarly
+                </h3>
+
+                <p>
+                    A <code>const</code> declaration also cannot be accessed
+                    before its declaration is evaluated.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>console.log(age);
+
+const age = 25;
+
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <div class="key-insight">
+
+            <span>⚠</span>
+
+            <p>
+                <strong>Interview tip:</strong>
+                Do not say that <code>let</code> and <code>const</code> are
+                "not hoisted." Their bindings are established during scope
+                initialization, but accessing them before initialization
+                results in a <code>ReferenceError</code> because of the
+                Temporal Dead Zone.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         05. FUNCTION HOISTING
+         ===================================================== -->
+
+    <section class="concept-section" id="functions">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Function declarations
+                </p>
+
+                <h2>
+                    Function hoisting
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    Function declarations
+                </h3>
+
+                <p>
+                    Function declarations are available before their
+                    position in the source code within the applicable scope.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>greet();
+
+function greet() {
+
+    console.log("Hello JavaScript!");
+
+}
+
+// Hello JavaScript!</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- FUNCTION EXPRESSION -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    Function expressions behave differently
+                </h3>
+
+                <p>
+                    When a function is assigned to a variable, the behavior
+                    depends on how that variable is declared. A function
+                    expression assigned to <code>var</code> cannot be called
+                    before the assignment has executed.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>greet();
+
+var greet = function () {
+
+    console.log("Hello");
+
+};
+
+// TypeError:
+// greet is not a function</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARROW FUNCTION -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    Arrow functions are not callable before initialization
+                </h3>
+
+                <p>
+                    An arrow function assigned to a
+                    <code>const</code> variable cannot be called before the
+                    declaration is evaluated.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>greet();
+
+const greet = () => {
+
+    console.log("Hello");
+
+};
+
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         06. COMMON EXAMPLES
+         ===================================================== -->
+
+    <section class="concept-section" id="examples">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Learn by doing
+                </p>
+
+                <h2>
+                    Common hoisting examples
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXAMPLE 01 -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    var inside a function
+                </h3>
+
+                <p>
+                    The <code>var</code> declaration is scoped to the
+                    function and is initialized as <code>undefined</code>
+                    before execution reaches the assignment.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function example() {
+
+    console.log(value);
+
+    var value = 50;
+
+    console.log(value);
+
+}
+
+example();
+
+// undefined
+// 50</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- EXAMPLE 02 -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    let inside a block
+                </h3>
+
+                <p>
+                    Accessing a <code>let</code> binding before its
+                    declaration is evaluated results in a
+                    <code>ReferenceError</code>.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>if (true) {
+
+    console.log(message);
+
+    let message = "Hello";
+
+}
+
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- EXAMPLE 03 -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    Function declaration
+                </h3>
+
+                <p>
+                    A function declaration can be called before its
+                    declaration appears in the source code.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>calculate();
+
+function calculate() {
+
+    console.log("Calculation started");
+
+}
+
+// Calculation started</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- INTERACTIVE -->
+
+        <article class="interactive-example">
+
+            <div class="interactive-header">
+
+                <div>
+
+                    <span class="example-number">
+                        Interactive
+                    </span>
+
+                    <h3>
+                        Experiment with hoisting
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="reset-code-btn"
+                    data-reset-editor="hoistingEditor"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <label for="hoistingEditor">
+                JavaScript code
+            </label>
+
+
+            <textarea
+                id="hoistingEditor"
+                class="code-editor"
+                spellcheck="false"
+            >console.log(score);
+
+var score = 100;
+
+console.log(score);</textarea>
+
+
+            <div class="editor-actions">
+
+                <button
+                    type="button"
+                    class="run-button"
+                    data-run-editor="hoistingEditor"
+                    data-output="hoistingOutput"
+                >
+                    ▶ Run Code
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-button"
+                    data-clear-output="hoistingOutput"
+                >
+                    Clear Output
+                </button>
+
+            </div>
+
+
+            <div class="output-panel">
+
+                <div class="output-header">
+                    <span>
+                        Console Output
+                    </span>
+                </div>
+
+                <pre id="hoistingOutput">Click "Run Code" to see the output.</pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         07. REAL LIFE USE CASE
+         ===================================================== -->
+
+    <section class="concept-section" id="use-case">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Practical JavaScript
+                </p>
+
+                <h2>
+                    Real-life use case
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    Code Organization
+                </span>
+
+                <h3>
+                    Understanding legacy JavaScript code
+                </h3>
+
+                <p>
+                    Hoisting becomes especially useful when maintaining older
+                    JavaScript applications that use many
+                    <code>var</code> declarations and function declarations.
+                    Understanding the execution behavior helps explain
+                    unexpected values and errors.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function initializeApp() {
+
+    setup();
+
+    console.log(status);
+
+    var status = "Ready";
+
+    function setup() {
+
+        console.log("Application setup");
+
+    }
+
+}
+
+initializeApp();
+
+// Application setup
+// undefined</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Best practice:</strong>
+                Do not rely on hoisting to make code work. Declare variables
+                before using them and organize code so that its execution
+                order is easy to understand.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08. INTERVIEW QUESTIONS
+         ===================================================== -->
+
+    <section class="concept-section" id="interview">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Interview preparation
+                </p>
+
+                <h2>
+                    Top 5 interview questions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="questions-list">
+
+
+            <!-- QUESTION 01 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        01
+                    </span>
+
+                    <span>
+                        What is hoisting in JavaScript?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Hoisting describes how JavaScript processes
+                        declarations during execution-context setup before
+                        executing the statements in that context. Different
+                        declaration types have different behavior.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 02 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        02
+                    </span>
+
+                    <span>
+                        Are let and const hoisted?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Their bindings are created during scope initialization,
+                        but they remain inaccessible until their declarations
+                        are evaluated. Accessing them before that point causes
+                        a <code>ReferenceError</code> because of the Temporal
+                        Dead Zone.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>console.log(value);
+
+let value = 10;
+
+// ReferenceError</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 03 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        03
+                    </span>
+
+                    <span>
+                        What happens when var is accessed before declaration?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        The <code>var</code> binding is initialized to
+                        <code>undefined</code>, so accessing it before its
+                        assignment produces <code>undefined</code>.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>console.log(value);
+
+var value = 10;
+
+// undefined</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 04 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        04
+                    </span>
+
+                    <span>
+                        Why can a function declaration be called before it is defined?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Function declarations are instantiated during
+                        execution-context creation, including their function
+                        body, so they can generally be called before their
+                        source-code position within the same applicable scope.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>greet();
+
+function greet() {
+
+    console.log("Hello");
+
+}
+
+// Hello</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 05 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        05
+                    </span>
+
+                    <span>
+                        What is the Temporal Dead Zone?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        The Temporal Dead Zone is the period from entering
+                        the scope of a <code>let</code>,
+                        <code>const</code> or class declaration until that
+                        declaration is evaluated. Accessing the binding
+                        during this period throws a
+                        <code>ReferenceError</code>.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>{
+    // TDZ starts here
+
+    console.log(name);
+
+    const name = "Amit";
+
+    // TDZ ends when declaration is evaluated
+}</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09. CODING CHALLENGE
+         ===================================================== -->
+
+    <section class="concept-section" id="challenge">
+
+        <div class="section-heading">
+
+            <span>09</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Code in an interview
+                </p>
+
+                <h2>
+                    Interview coding challenge
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="challenge-card">
+
+
+            <div class="challenge-description">
+
+                <span class="challenge-label">
+                    Predict the Output
+                </span>
+
+                <h3>
+                    Understand var hoisting
+                </h3>
+
+                <p>
+                    Before running the code, predict what will be printed
+                    to the console. Then execute it and explain why the
+                    result occurs.
+                </p>
+
+
+                <div class="expected-output">
+
+                    <h4>
+                        Challenge
+                    </h4>
+
+                    <pre>console.log(a);
+
+var a = 10;
+
+console.log(a);</pre>
+
+                </div>
+
+            </div>
+
+
+            <div class="challenge-editor">
+
+                <label for="hoistingChallengeEditor">
+                    Experiment with the code
+                </label>
+
+
+                <textarea
+                    id="hoistingChallengeEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                >console.log(a);
+
+var a = 10;
+
+console.log(a);
+</textarea>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        data-run-editor="hoistingChallengeEditor"
+                        data-output="hoistingChallengeOutput"
+                    >
+                        ▶ Run Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hint-button"
+                        data-hint-target="hoistingHint"
+                    >
+                        💡 Hint
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="hint-box"
+                    id="hoistingHint"
+                    hidden
+                >
+                    Think of the <code>var</code> declaration as being
+                    initialized to <code>undefined</code> before the
+                    assignment <code>a = 10</code> executes.
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="output-header">
+                        <span>
+                            Console Output
+                        </span>
+                    </div>
+
+                    <pre id="hoistingChallengeOutput">Run the code to see the output.</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TAKEAWAY
+         ===================================================== -->
+
+    <section class="takeaway-section">
+
+        <div class="takeaway-card">
+
+            <span class="takeaway-icon">
+                🎯
+            </span>
+
+
+            <div>
+
+                <p class="section-kicker">
+                    Remember
+                </p>
+
+                <h2>
+                    Hoisting explains declaration behavior, not magical code movement.
+                </h2>
+
+                <p>
+                    Remember the key differences:
+                    <code>var</code> is initialized to
+                    <code>undefined</code>, <code>let</code> and
+                    <code>const</code> remain inaccessible during the
+                    Temporal Dead Zone, and function declarations can
+                    generally be called before their declaration.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGINATION
+         ===================================================== -->
+
+    <nav
+        class="concept-pagination"
+        aria-label="Concept pagination"
+    >
+
+        <a
+            href="scope.html"
+            class="pagination-link"
+        >
+
+            <span>←</span>
+
+            <div>
+
+                <small>
+                    Previous Concept
+                </small>
+
+                <strong>
+                    Scope
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="closures.html"
+            class="pagination-link next"
+        >
+
+            <div>
+
+                <small>
+                    Next Concept
+                </small>
+
+                <strong>
+                    Closures
+                </strong>
+
+            </div>
+
+            <span>→</span>
+
+        </a>
+
+    </nav>
+
+</main>
+        
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+ <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+
+</body>
+
+</html>

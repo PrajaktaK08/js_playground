@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/concept-page.css">
+</head>
+<body>
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="../../index.html" class="logo">
+                <span class="logo-mark">JS</span>
+
+                <span class="logo-text">
+                    JavaScript
+                    <small>Interview Playground</small>
+                </span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+    <div class="app-layout">
+        <aside class="sidebar" id="mainNavigation">
+            <nav class="sidebar-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/concepts.html" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+<main class="concept-detail-page">
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <a href="../concepts.html">
+            Concepts
+        </a>
+
+        <span aria-hidden="true">/</span>
+
+        <span>Scope</span>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONCEPT HEADER
+         ===================================================== -->
+
+    <section class="concept-header">
+
+        <div class="concept-header-number">
+            08
+        </div>
+
+        <div class="concept-header-content">
+
+            <span class="concept-label">
+                JavaScript Fundamentals
+            </span>
+
+            <h1>
+                Scope
+            </h1>
+
+            <p>
+                Understand where variables and functions are accessible in
+                JavaScript and how global, function, block and lexical scope
+                control variable visibility.
+            </p>
+
+            <div class="concept-meta">
+
+                <span class="meta-badge">
+                    Beginner
+                </span>
+
+                <span class="meta-badge">
+                    Variables
+                </span>
+
+                <span class="meta-badge">
+                    Interview Essential
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION NAVIGATION
+         ===================================================== -->
+
+    <nav class="section-navigation" aria-label="Concept sections">
+
+        <a href="#definition">Definition</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#types">Types</a>
+        <a href="#lexical">Lexical Scope</a>
+        <a href="#examples">Examples</a>
+        <a href="#use-case">Real Life</a>
+        <a href="#interview">Interview</a>
+        <a href="#challenge">Challenge</a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         01. DEFINITION
+         ===================================================== -->
+
+    <section class="concept-section" id="definition">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Foundation
+                </p>
+
+                <h2>
+                    What is scope?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="definition-grid">
+
+            <article class="definition-card">
+
+                <span class="definition-icon">?</span>
+
+                <h3>
+                    What?
+                </h3>
+
+                <p>
+                    Scope determines where a variable, function or other
+                    identifier can be accessed in a JavaScript program.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⏱</span>
+
+                <h3>
+                    When?
+                </h3>
+
+                <p>
+                    Scope matters whenever you create variables, functions,
+                    blocks or nested code and need to understand which
+                    identifiers are available in a particular location.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">💡</span>
+
+                <h3>
+                    Why?
+                </h3>
+
+                <p>
+                    Scope prevents unnecessary access to variables, reduces
+                    naming conflicts and helps keep application code
+                    organized and predictable.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⚙</span>
+
+                <h3>
+                    How?
+                </h3>
+
+                <p>
+                    JavaScript determines variable accessibility based on
+                    where the variable is declared and the surrounding
+                    lexical structure of the code.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02. SYNTAX
+         ===================================================== -->
+
+    <section class="concept-section" id="syntax">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Fundamentals
+                </p>
+
+                <h2>
+                    Scope syntax
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="syntax-card">
+
+            <div class="code-header">
+                <span>JavaScript</span>
+            </div>
+
+            <pre><code>// Global scope
+
+let globalValue = 100;
+
+function example() {
+
+    // Function scope
+
+    let functionValue = 200;
+
+    if (true) {
+
+        // Block scope
+
+        let blockValue = 300;
+
+    }
+
+}</code></pre>
+
+        </div>
+
+
+        <div class="syntax-note">
+
+            <strong>Remember:</strong>
+
+            <span>
+                A variable declared inside a scope is generally available
+                to that scope and its nested scopes, but not to its outer
+                scopes.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03. TYPES OF SCOPE
+         ===================================================== -->
+
+    <section class="concept-section" id="types">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Core concepts
+                </p>
+
+                <h2>
+                    Types of scope
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- GLOBAL SCOPE -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 01
+                </span>
+
+                <h3>
+                    Global Scope
+                </h3>
+
+                <p>
+                    A variable declared outside functions and blocks is
+                    available from the global scope, subject to JavaScript's
+                    environment-specific global rules.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const appName = "JavaScript Playground";
+
+function showAppName() {
+
+    console.log(appName);
+
+}
+
+showAppName();
+
+// JavaScript Playground</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- FUNCTION SCOPE -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 02
+                </span>
+
+                <h3>
+                    Function Scope
+                </h3>
+
+                <p>
+                    Variables declared with <code>var</code> inside a
+                    function are scoped to that function.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function calculate() {
+
+    var result = 100;
+
+    console.log(result);
+
+}
+
+calculate();
+
+// 100
+
+// console.log(result);
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- BLOCK SCOPE -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 03
+                </span>
+
+                <h3>
+                    Block Scope
+                </h3>
+
+                <p>
+                    Variables declared with <code>let</code> and
+                    <code>const</code> are block-scoped. A block is created
+                    by curly braces such as those used by
+                    <code>if</code>, <code>for</code> and
+                    <code>while</code>.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>if (true) {
+
+    let message = "Inside block";
+
+    const number = 10;
+
+    console.log(message);
+    console.log(number);
+
+}
+
+// console.log(message);
+// ReferenceError
+
+// console.log(number);
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- MODULE SCOPE -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 04
+                </span>
+
+                <h3>
+                    Module Scope
+                </h3>
+
+                <p>
+                    Variables declared at the top level of an ES module
+                    belong to that module and are not automatically global.
+                    Modules can explicitly share values using
+                    <code>export</code> and <code>import</code>.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>// math.js
+
+const taxRate = 18;
+
+export function calculateTax(price) {
+
+    return price * taxRate / 100;
+
+}
+
+
+// app.js
+
+import { calculateTax } from "./math.js";
+
+console.log(calculateTax(1000));
+// 180</code></pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         04. LEXICAL SCOPE
+         ===================================================== -->
+
+    <section class="concept-section" id="lexical">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Important concept
+                </p>
+
+                <h2>
+                    Lexical scope
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    Core Idea
+                </span>
+
+                <h3>
+                    Inner scopes can access outer scopes
+                </h3>
+
+                <p>
+                    JavaScript uses lexical scoping. This means the
+                    accessibility of a variable is determined by where the
+                    code is written, not by where the function is eventually
+                    called.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const outer = "I am outside";
+
+function outerFunction() {
+
+    const inner = "I am inside";
+
+    function innerFunction() {
+
+        console.log(outer);
+        console.log(inner);
+
+    }
+
+    innerFunction();
+
+}
+
+outerFunction();
+
+// I am outside
+// I am inside</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Think of scope like nested rooms:</strong>
+                an inner room can access things from the rooms outside it,
+                but an outer room cannot directly access private things
+                inside the inner room.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         05. VAR VS LET VS CONST
+         ===================================================== -->
+
+    <section class="concept-section" id="variables">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Interview essential
+                </p>
+
+                <h2>
+                    var vs let vs const
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Comparison
+                </span>
+
+                <h3>
+                    Scope behavior
+                </h3>
+
+                <p>
+                    Understanding the scope differences between
+                    <code>var</code>, <code>let</code> and
+                    <code>const</code> is one of the most common JavaScript
+                    interview topics.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>if (true) {
+
+    var a = 10;
+    let b = 20;
+    const c = 30;
+
+}
+
+console.log(a);
+// 10
+
+// console.log(b);
+// ReferenceError
+
+// console.log(c);
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <div class="key-insight">
+
+            <span>⚠</span>
+
+            <p>
+                <strong>Best practice:</strong>
+                Prefer <code>const</code> by default, use
+                <code>let</code> when reassignment is required, and avoid
+                <code>var</code> in modern JavaScript unless you have a
+                specific reason to use its function-scoped behavior.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06. COMMON SCOPE EXAMPLES
+         ===================================================== -->
+
+    <section class="concept-section" id="examples">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Learn by doing
+                </p>
+
+                <h2>
+                    Common scope examples
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- NESTED SCOPE -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    Nested scopes
+                </h3>
+
+                <p>
+                    A nested scope can access variables declared in its
+                    surrounding scope.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const name = "Amit";
+
+function greet() {
+
+    const message = "Hello";
+
+    if (true) {
+
+        console.log(message);
+        console.log(name);
+
+    }
+
+}
+
+greet();
+
+// Hello
+// Amit</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- SAME VARIABLE NAME -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    Variable shadowing
+                </h3>
+
+                <p>
+                    A variable declared in an inner scope can have the same
+                    name as a variable in an outer scope. The inner variable
+                    then shadows the outer variable within that scope.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const name = "Amit";
+
+function greet() {
+
+    const name = "Rahul";
+
+    console.log(name);
+
+}
+
+greet();
+
+// Rahul
+
+console.log(name);
+
+// Amit</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- LOOP SCOPE -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    Scope inside a loop
+                </h3>
+
+                <p>
+                    Variables declared with <code>let</code> inside a loop
+                    remain scoped to the loop block.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>for (let i = 0; i &lt; 3; i++) {
+
+    console.log(i);
+
+}
+
+// console.log(i);
+// ReferenceError</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- INTERACTIVE -->
+
+        <article class="interactive-example">
+
+            <div class="interactive-header">
+
+                <div>
+
+                    <span class="example-number">
+                        Interactive
+                    </span>
+
+                    <h3>
+                        Experiment with scope
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="reset-code-btn"
+                    data-reset-editor="scopeEditor"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <label for="scopeEditor">
+                JavaScript code
+            </label>
+
+
+            <textarea
+                id="scopeEditor"
+                class="code-editor"
+                spellcheck="false"
+            >const userName = "Amit";
+
+function greetUser() {
+
+    const message = "Hello";
+
+    console.log(message, userName);
+
+}
+
+greetUser();</textarea>
+
+
+            <div class="editor-actions">
+
+                <button
+                    type="button"
+                    class="run-button"
+                    data-run-editor="scopeEditor"
+                    data-output="scopeOutput"
+                >
+                    ▶ Run Code
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-button"
+                    data-clear-output="scopeOutput"
+                >
+                    Clear Output
+                </button>
+
+            </div>
+
+
+            <div class="output-panel">
+
+                <div class="output-header">
+                    <span>
+                        Console Output
+                    </span>
+                </div>
+
+                <pre id="scopeOutput">Click "Run Code" to see the output.</pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         07. REAL LIFE USE CASE
+         ===================================================== -->
+
+    <section class="concept-section" id="use-case">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Practical JavaScript
+                </p>
+
+                <h2>
+                    Real-life use case
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    Application Development
+                </span>
+
+                <h3>
+                    Keep private data inside a function
+                </h3>
+
+                <p>
+                    Scope allows application code to keep temporary or
+                    implementation-specific values private instead of
+                    exposing them unnecessarily to the rest of the program.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function createOrder(price, quantity) {
+
+    const subtotal = price * quantity;
+
+    const tax = subtotal * 0.18;
+
+    const total = subtotal + tax;
+
+    return total;
+}
+
+const orderTotal = createOrder(1000, 2);
+
+console.log("Order Total:", orderTotal);
+
+// Order Total: 2360
+
+// subtotal, tax and total are not
+// directly accessible here.</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Why this matters:</strong>
+                Scope helps you prevent accidental changes to internal
+                variables and makes functions easier to understand,
+                maintain and reuse.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08. INTERVIEW QUESTIONS
+         ===================================================== -->
+
+    <section class="concept-section" id="interview">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Interview preparation
+                </p>
+
+                <h2>
+                    Top 5 interview questions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="questions-list">
+
+
+            <!-- QUESTION 01 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        01
+                    </span>
+
+                    <span>
+                        What is scope in JavaScript?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Scope defines where variables and functions can be
+                        accessed in a JavaScript program. Common scope types
+                        include global, function, block and module scope.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 02 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        02
+                    </span>
+
+                    <span>
+                        What is the difference between function scope and block scope?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Function scope means a variable is accessible
+                        throughout the function. Block scope limits a
+                        variable to a specific block such as an
+                        <code>if</code> statement or loop.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function example() {
+
+    var functionScoped = 10;
+
+    if (true) {
+
+        let blockScoped = 20;
+
+        console.log(functionScoped);
+        console.log(blockScoped);
+
+    }
+
+    // blockScoped is unavailable here
+}</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 03 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        03
+                    </span>
+
+                    <span>
+                        What is lexical scope?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Lexical scope means variable accessibility is
+                        determined by where code is physically written.
+                        Inner functions can access variables from their
+                        surrounding lexical scopes.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>const outer = "Outer";
+
+function parent() {
+
+    function child() {
+
+        console.log(outer);
+
+    }
+
+    child();
+
+}
+
+parent();
+
+// Outer</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 04 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        04
+                    </span>
+
+                    <span>
+                        What is variable shadowing?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Variable shadowing occurs when a variable declared
+                        in an inner scope has the same name as a variable
+                        declared in an outer scope.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>let value = 10;
+
+function example() {
+
+    let value = 20;
+
+    console.log(value);
+
+}
+
+example();
+// 20
+
+console.log(value);
+// 10</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 05 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        05
+                    </span>
+
+                    <span>
+                        Why are let and const preferred over var?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        <code>let</code> and <code>const</code> are
+                        block-scoped, which generally makes variable
+                        behavior easier to reason about. They also have
+                        temporal dead zone semantics and cannot be
+                        redeclared in the same lexical scope.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>if (true) {
+
+    let count = 10;
+
+    const name = "Amit";
+
+}
+
+// count and name are unavailable here.</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         09. CODING CHALLENGE
+         ===================================================== -->
+
+    <section class="concept-section" id="challenge">
+
+        <div class="section-heading">
+
+            <span>09</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Code in an interview
+                </p>
+
+                <h2>
+                    Interview coding challenge
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="challenge-card">
+
+
+            <div class="challenge-description">
+
+                <span class="challenge-label">
+                    Coding Challenge
+                </span>
+
+                <h3>
+                    Fix the scope problem
+                </h3>
+
+                <p>
+                    The following code tries to use a variable outside the
+                    block where it was declared. Fix the code so that the
+                    value can be accessed where required.
+                </p>
+
+
+                <div class="expected-output">
+
+                    <h4>
+                        Expected output
+                    </h4>
+
+                    <pre>Username: Amit</pre>
+
+                </div>
+
+            </div>
+
+
+            <div class="challenge-editor">
+
+                <label for="scopeChallengeEditor">
+                    Fix the code
+                </label>
+
+
+                <textarea
+                    id="scopeChallengeEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                >if (true) {
+
+    const username = "Amit";
+
+}
+
+console.log("Username:", username);
+</textarea>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        data-run-editor="scopeChallengeEditor"
+                        data-output="scopeChallengeOutput"
+                    >
+                        ▶ Run Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hint-button"
+                        data-hint-target="scopeHint"
+                    >
+                        💡 Hint
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="hint-box"
+                    id="scopeHint"
+                    hidden
+                >
+                    Declare <code>username</code> in a scope that also
+                    contains the <code>console.log()</code> statement.
+                    You can declare it before the <code>if</code> block.
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="output-header">
+                        <span>
+                            Console Output
+                        </span>
+                    </div>
+
+                    <pre id="scopeChallengeOutput">Run your solution to see the output.</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TAKEAWAY
+         ===================================================== -->
+
+    <section class="takeaway-section">
+
+        <div class="takeaway-card">
+
+            <span class="takeaway-icon">
+                🎯
+            </span>
+
+
+            <div>
+
+                <p class="section-kicker">
+                    Remember
+                </p>
+
+                <h2>
+                    Scope controls where your variables can be accessed.
+                </h2>
+
+                <p>
+                    Master global scope, function scope, block scope,
+                    module scope and lexical scope. Always understand where
+                    a variable is declared before trying to access it.
+                    Prefer <code>const</code> and <code>let</code> for modern
+                    JavaScript and use scope intentionally to keep code
+                    clean and predictable.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGINATION
+         ===================================================== -->
+
+    <nav
+        class="concept-pagination"
+        aria-label="Concept pagination"
+    >
+
+        <a
+            href="functions.html"
+            class="pagination-link"
+        >
+
+            <span>←</span>
+
+            <div>
+
+                <small>
+                    Previous Concept
+                </small>
+
+                <strong>
+                    Functions
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="hoisting.html"
+            class="pagination-link next"
+        >
+
+            <div>
+
+                <small>
+                    Next Concept
+                </small>
+
+                <strong>
+                    Hoisting
+                </strong>
+
+            </div>
+
+            <span>→</span>
+
+        </a>
+
+    </nav>
+
+</main>
+        
+
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+ <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+
+</body>
+
+</html>

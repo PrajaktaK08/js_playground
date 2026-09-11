@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/concept-page.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mark">JS</span>
+
+          <span class="logo-text">
+            JavaScript
+            <small>Interview Playground</small>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+    <div class="app-layout">
+      <aside class="sidebar" id="mainNavigation">
+        <nav class="sidebar-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link active"> Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/concepts.html" class="nav-link"> Concepts </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/pages/quiz.html" class="nav-link"> Interview Quiz </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#challenges" class="nav-link"> Coding Challenges </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#debugging" class="nav-link"> Debugging Lab </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#internals" class="nav-link"> JavaScript Internals </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#performance" class="nav-link"> Performance Lab </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#progress" class="nav-link"> Progress </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="concept-detail-page">
+        <!-- ================================================= BREADCRUMB ================================================= -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../concepts.html"> Concepts </a>
+          <span aria-hidden="true"> / </span>
+          <span> Type Coercion & Conversion </span>
+        </nav>
+        <!-- ================================================= CONCEPT HEADER ================================================= -->
+        <section class="concept-header">
+          <div class="concept-header-number">03</div>
+          <div class="concept-header-content">
+            <span class="concept-label"> JavaScript Fundamentals </span>
+            <h1>Type Coercion & Conversion</h1>
+            <p>
+              Learn how JavaScript changes values from one type to another, both
+              automatically and explicitly.
+            </p>
+            <div class="concept-meta">
+              <span class="meta-badge"> Beginner </span>
+              <span class="meta-badge"> Core JavaScript </span>
+              <span class="meta-badge"> Interview Essential </span>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= CONTENT NAVIGATION ================================================= -->
+        <nav class="section-navigation" aria-label="Concept sections">
+          <a href="#definition"> Definition </a> <a href="#types"> Types </a>
+          <a href="#conversion"> Conversion </a>
+          <a href="#coercion"> Coercion </a> <a href="#examples"> Examples </a>
+          <a href="#use-case"> Real Life </a>
+          <a href="#interview"> Interview </a>
+          <a href="#challenge"> Challenge </a>
+        </nav>
+        <!-- ================================================= 01. DEFINITION ================================================= -->
+        <section class="concept-section" id="definition">
+          <div class="section-heading">
+            <span> 01 </span>
+            <div>
+              <p class="section-kicker">Foundation</p>
+              <h2>What is type coercion and conversion?</h2>
+            </div>
+          </div>
+          <div class="definition-grid">
+            <article class="definition-card">
+              <span class="definition-icon"> ? </span>
+              <h3>What?</h3>
+              <p>
+                Type conversion means explicitly changing a value from one data
+                type to another. Type coercion means JavaScript automatically
+                converts a value during an operation.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon"> ⏱ </span>
+              <h3>When?</h3>
+              <p>
+                It occurs whenever values of different types interact or when
+                your program intentionally needs a different representation.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon"> 💡 </span>
+              <h3>Why?</h3>
+              <p>
+                Understanding conversion and coercion helps you avoid unexpected
+                results and predict JavaScript expressions correctly.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon"> ⚙ </span>
+              <h3>How?</h3>
+              <p>
+                JavaScript performs implicit coercion in certain operations,
+                while developers can perform explicit conversion using functions
+                such as Number(), String() and Boolean().
+              </p>
+            </article>
+          </div>
+        </section>
+        <!-- ================================================= 02. TYPES ================================================= -->
+        <section class="concept-section" id="types">
+          <div class="section-heading">
+            <span> 02 </span>
+            <div>
+              <p class="section-kicker">Core classification</p>
+              <h2>Two ways types can change</h2>
+            </div>
+          </div>
+          <div class="definition-grid">
+            <article class="definition-card">
+              <span class="definition-icon"> 01 </span>
+              <h3>Explicit conversion</h3>
+              <p>
+                The developer intentionally converts a value to another type.
+              </p>
+              <div class="code-block">
+                <pre><code>const value = "100"; const number = Number(value); console.log(number);</code></pre>
+              </div>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon"> 02 </span>
+              <h3>Implicit coercion</h3>
+              <p>
+                JavaScript automatically converts a value because an operation
+                requires compatible types.
+              </p>
+              <div class="code-block">
+                <pre><code>const result = "100" - 20; console.log(result);</code></pre>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- ================================================= 03. TYPE CONVERSION ================================================= -->
+        <section class="concept-section" id="conversion">
+          <div class="section-heading">
+            <span> 03 </span>
+            <div>
+              <p class="section-kicker">Explicit conversion</p>
+              <h2>Type conversion</h2>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-content">
+              <span class="example-number"> String → Number </span>
+              <h3>Number()</h3>
+              <p>Converts a value to a number when possible.</p>
+            </div>
+            <div class="code-block">
+              <pre><code>const value = "42"; const result = Number(value); console.log(result); console.log(typeof result);</code></pre>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Number → String </span>
+              <h3>String()</h3>
+              <p>Converts a value to its string representation.</p>
+            </div>
+            <div class="code-block">
+              <pre><code>const value = 42; const result = String(value); console.log(result); console.log(typeof result);</code></pre>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Value → Boolean </span>
+              <h3>Boolean()</h3>
+              <p>
+                Converts a value to either <code>true</code> or
+                <code>false</code>.
+              </p>
+            </div>
+            <div class="code-block">
+              <pre><code>console.log(Boolean(1)); console.log(Boolean(0)); console.log(Boolean("hello")); console.log(Boolean("")); </code></pre>
+            </div>
+          </div>
+          <div class="syntax-card">
+            <div class="code-header">
+              <span> Common conversion syntax </span>
+            </div>
+            <pre><code>Number(value); String(value); Boolean(value);</code></pre>
+          </div>
+        </section>
+        <!-- ================================================= 04. TYPE COERCION ================================================= -->
+        <section class="concept-section" id="coercion">
+          <div class="section-heading">
+            <span> 04 </span>
+            <div>
+              <p class="section-kicker">Implicit conversion</p>
+              <h2>Type coercion</h2>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Example 01 </span>
+              <h3>String + Number</h3>
+              <p>
+                With the plus operator, JavaScript can convert the number to a
+                string and concatenate.
+              </p>
+            </div>
+            <div class="code-block">
+              <pre><code>const result = "10" + 5; console.log(result); console.log(typeof result); // "105" // "string"</code></pre>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Example 02 </span>
+              <h3>String - Number</h3>
+              <p>
+                The subtraction operator converts numeric strings to numbers
+                when possible.
+              </p>
+            </div>
+            <div class="code-block">
+              <pre><code>const result = "10" - 5; console.log(result); console.log(typeof result); // 5 // "number"</code></pre>
+            </div>
+          </div>
+          <div class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Example 03 </span>
+              <h3>Equality coercion</h3>
+              <p>
+                Loose equality can perform type coercion, while strict equality
+                does not perform this coercion.
+              </p>
+            </div>
+            <div class="code-block">
+              <pre><code>console.log(5 == "5"); console.log(5 === "5"); // true // false</code></pre>
+            </div>
+          </div>
+          <div class="key-insight">
+            <span> ⚠️ </span>
+            <p>
+              Prefer <code>===</code> when you want strict equality because it
+              compares both value and type without the coercion performed by
+              loose equality.
+            </p>
+          </div>
+        </section>
+        <!-- ================================================= 05. TRUTHY AND FALSY ================================================= -->
+        <section class="concept-section">
+          <div class="section-heading">
+            <span> 05 </span>
+            <div>
+              <p class="section-kicker">Important coercion rule</p>
+              <h2>Truthy and falsy values</h2>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Falsy value</th>
+                  <th>Boolean result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>false</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>-0</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>""</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>null</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>undefined</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>NaN</td>
+                  <td>false</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="code-block">
+            <div class="code-header"><span> JavaScript </span></div>
+            <pre><code>console.log(Boolean(0)); console.log(Boolean("")); console.log(Boolean(null)); console.log(Boolean("hello")); console.log(Boolean(100)); console.log(Boolean([]));</code></pre>
+          </div>
+        </section>
+        <!-- ================================================= 06. INTERACTIVE EXAMPLES ================================================= -->
+        <section class="concept-section" id="examples">
+          <div class="section-heading">
+            <span> 06 </span>
+            <div>
+              <p class="section-kicker">Learn by doing</p>
+              <h2>Experiment with coercion</h2>
+            </div>
+          </div>
+          <article class="interactive-example">
+            <div class="interactive-header">
+              <div>
+                <span class="example-number"> Interactive </span>
+                <h3>Predict the output</h3>
+              </div>
+              <button type="button" class="reset-code-btn" id="resetExample">
+                Reset
+              </button>
+            </div>
+            <label for="exampleEditor"> JavaScript code </label>
+            <textarea
+              id="exampleEditor"
+              class="code-editor"
+              spellcheck="false"
+              aria-label="JavaScript code editor"
+            >
+console.log("10" + 5); console.log("10" - 5); console.log("10" * 2); console.log(5 == "5"); console.log(5 === "5");</textarea
+            >
+            <div class="editor-actions">
+              <button type="button" class="run-button" id="runExample">
+                ▶ Run Code
+              </button>
+              <button
+                type="button"
+                class="clear-button"
+                id="clearExampleOutput"
+              >
+                Clear Output
+              </button>
+            </div>
+            <div class="output-panel">
+              <div class="output-header">Console Output</div>
+              <pre id="exampleOutput">Click "Run Code" to see the output.</pre>
+            </div>
+          </article>
+        </section>
+        <!-- ================================================= 07. REAL LIFE USE CASE ================================================= -->
+        <section class="concept-section" id="use-case">
+          <div class="section-heading">
+            <span> 07 </span>
+            <div>
+              <p class="section-kicker">Practical JavaScript</p>
+              <h2>Real-life use case</h2>
+            </div>
+          </div>
+          <div class="use-case-card">
+            <div class="use-case-text">
+              <span class="use-case-label"> Form Handling </span>
+              <h3>Converting user input</h3>
+              <p>
+                Values retrieved from HTML form controls are commonly strings.
+                Before performing numeric calculations, you often need explicit
+                conversion.
+              </p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span> JavaScript </span></div>
+              <pre><code>const quantityInput = "3"; const priceInput = "499"; const quantity = Number(quantityInput); const price = Number(priceInput); const total = quantity * price; console.log("Quantity:", quantity); console.log("Price:", price); console.log("Total:", total);</code></pre>
+            </div>
+          </div>
+          <div class="key-insight">
+            <span> 💡 </span>
+            <p>
+              Form values are commonly strings. Explicitly converting them
+              before calculations makes your intention clear and prevents
+              confusing results.
+            </p>
+          </div>
+        </section>
+        <!-- ================================================= 08. CONVERSION VS COERCION ================================================= -->
+        <section class="concept-section">
+          <div class="section-heading">
+            <span> 08 </span>
+            <div>
+              <p class="section-kicker">Interview essential</p>
+              <h2>Conversion vs coercion</h2>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Conversion</th>
+                  <th>Coercion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Meaning</td>
+                  <td>Explicit type change</td>
+                  <td>Automatic type change</td>
+                </tr>
+                <tr>
+                  <td>Controlled by</td>
+                  <td>Developer</td>
+                  <td>JavaScript</td>
+                </tr>
+                <tr>
+                  <td>Example</td>
+                  <td>Number("10")</td>
+                  <td>"10" - 5</td>
+                </tr>
+                <tr>
+                  <td>Intent</td>
+                  <td>Usually clear</td>
+                  <td>Can be surprising</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ================================================= 09. INTERVIEW QUESTIONS ================================================= -->
+        <section class="concept-section" id="interview">
+          <div class="section-heading">
+            <span> 09 </span>
+            <div>
+              <p class="section-kicker">Interview preparation</p>
+              <h2>Top 5 interview questions</h2>
+            </div>
+          </div>
+          <div class="questions-list">
+            <!-- Question 1 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 01 </span>
+                <span>
+                  What is the difference between type conversion and type
+                  coercion?
+                </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  Type conversion is explicit and controlled by the developer.
+                  Type coercion is an automatic conversion performed by
+                  JavaScript during certain operations.
+                </p>
+                <div class="code-block">
+                  <pre><code>// Explicit conversion Number("10"); // Implicit coercion "10" - 5;</code></pre>
+                </div>
+              </div>
+            </details>
+            <!-- Question 2 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 02 </span>
+                <span> What is the output of "5" + 2? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  The result is <code>"52"</code>. With the plus operator, when
+                  one operand is a string, JavaScript performs string
+                  concatenation.
+                </p>
+                <div class="code-block">
+                  <pre><code>console.log("5" + 2); // "52"</code></pre>
+                </div>
+              </div>
+            </details>
+            <!-- Question 3 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 03 </span>
+                <span> What is the difference between == and ===? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  <code>==</code> performs loose equality comparison and may
+                  coerce types. <code>===</code> performs strict equality
+                  comparison without that coercion.
+                </p>
+                <div class="code-block">
+                  <pre><code>5 == "5"; // true 5 === "5"; // false</code></pre>
+                </div>
+              </div>
+            </details>
+            <!-- Question 4 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 04 </span>
+                <span> What are truthy and falsy values? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  A truthy value behaves like <code>true</code> when converted
+                  to a boolean. A falsy value behaves like <code>false</code>.
+                </p>
+                <p>
+                  Common falsy values include <code>false</code>,
+                  <code>0</code>, <code>""</code>, <code>null</code>,
+                  <code>undefined</code> and <code>NaN</code>.
+                </p>
+              </div>
+            </details>
+            <!-- Question 5 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 05 </span>
+                <span> What is the output of "10" - 2 and why? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  The result is <code>8</code>. The subtraction operator
+                  requires numeric operands, so JavaScript converts the string
+                  <code>"10"</code> into the number <code>10</code>.
+                </p>
+                <div class="code-block">
+                  <pre><code>console.log("10" - 2); // 8</code></pre>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+        <!-- ================================================= 10. INTERVIEW CODING CHALLENGE ================================================= -->
+        <section class="concept-section" id="challenge">
+          <div class="section-heading">
+            <span> 10 </span>
+            <div>
+              <p class="section-kicker">Code in an interview</p>
+              <h2>Convert and calculate</h2>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-description">
+              <span class="challenge-label"> Coding Challenge </span>
+              <h3>Shopping cart calculation</h3>
+              <p>
+                You receive the quantity and price as strings. Convert them into
+                numbers and calculate the total price.
+              </p>
+              <div class="expected-output">
+                <h4>Expected output</h4>
+                <pre>Quantity: 3 Price: 499 Total: 1497</pre>
+              </div>
+            </div>
+            <div class="challenge-editor">
+              <label for="challengeEditor"> Write your solution </label>
+              <textarea
+                id="challengeEditor"
+                class="code-editor"
+                spellcheck="false"
+              >
+const quantityInput = "3"; const priceInput = "499"; // Convert the values here // Calculate the total here // Print the result here </textarea
+              >
+              <div class="editor-actions">
+                <button type="button" class="run-button" id="runChallenge">
+                  ▶ Run Code
+                </button>
+                <button type="button" class="hint-button" id="showHint">
+                  💡 Hint
+                </button>
+              </div>
+              <div class="hint-box" id="hintBox" hidden>
+                Use <code>Number(quantityInput)</code> and
+                <code>Number(priceInput)</code>. Then multiply the converted
+                values.
+              </div>
+              <div class="output-panel">
+                <div class="output-header">Console Output</div>
+                <pre id="challengeOutput">
+Run your solution to see the output.</pre
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= QUICK TAKEAWAY ================================================= -->
+        <section class="takeaway-section">
+          <div class="takeaway-card">
+            <span class="takeaway-icon"> 🎯 </span>
+            <div>
+              <p class="section-kicker">Remember</p>
+              <h2>Know when JavaScript converts types.</h2>
+              <p>
+                Explicit conversion is controlled by you. Coercion happens
+                automatically. Understanding operators such as <code>+</code>,
+                <code>-</code>, <code>==</code> and <code>===</code> is
+                essential for predicting JavaScript behavior in interviews.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= PREVIOUS / NEXT ================================================= -->
+        <nav class="concept-pagination" aria-label="Concept pagination">
+          <a href="data-types.html" class="pagination-link">
+            <span> ← </span>
+            <div>
+              <small> Previous Concept </small> <strong> Data Types </strong>
+            </div>
+          </a>
+          <a href="../concepts.html" class="pagination-link next">
+            <div><small> Back to </small> <strong> All Concepts </strong></div>
+            <span> → </span>
+          </a>
+        </nav>
+      </main>
+      <!-- ===================================================== SIDEBAR OVERLAY ===================================================== -->
+      <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>JS Playground 2026. All rights reserved.😊</p>
+      </div>
+    </footer>
+
+    <!-- Global JavaScript -->
+
+    <script src="../../js/app.js"></script>
+
+    <script src="../../js/concept-page.js"></script>
+  </body>
+</html>

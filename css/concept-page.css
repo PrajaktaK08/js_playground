@@ -1,0 +1,705 @@
+
+
+
+.concept-detail-page {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 2rem 0 5rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    opacity: 1;
+}
+
+/* Concept Header */
+.concept-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 1.25rem;
+}
+
+.concept-header-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    background: rgba(128, 128, 128, 0.12);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.concept-label,
+.section-kicker,
+.example-number,
+.use-case-label,
+.challenge-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.concept-header h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+}
+
+.concept-header p {
+    max-width: 680px;
+    margin: 1rem 0 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.72;
+}
+
+.concept-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.meta-badge {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* Sections Navigation */
+.section-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    gap: 0.35rem;
+    overflow-x: auto;
+    margin-bottom: 4rem;
+    padding: 0.6rem;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 0.9rem;
+    background: var(--background-color, #fff);
+    scrollbar-width: none;
+}
+
+.section-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.section-navigation a {
+    flex-shrink: 0;
+    padding: 0.55rem 0.8rem;
+    border-radius: 0.6rem;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    opacity: 0.65;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.section-navigation a:hover {
+    background: rgba(128, 128, 128, 0.1);
+    opacity: 1;
+}
+
+/* Sections */
+.concept-section {
+    margin-bottom: 5rem;
+    scroll-margin-top: 5rem;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    line-height: 1.15;
+}
+
+.section-heading .section-kicker {
+    margin-bottom: 0.35rem;
+}
+
+/* Foundation Cards */
+.definition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.definition-card {
+    padding: 1.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.22);
+    border-radius: 1rem;
+}
+
+.definition-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.7rem;
+    background: rgba(128, 128, 128, 0.1);
+    font-weight: 800;
+}
+
+.definition-card h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.1rem;
+}
+
+.definition-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+/* Code Blocks */
+.syntax-card,
+.code-block {
+    overflow: hidden;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 0.9rem;
+}
+
+.code-header {
+    display: flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+}
+
+pre {
+    margin: 0;
+    overflow-x: auto;
+    padding: 1.25rem;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    tab-size: 4;
+}
+
+.syntax-note {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding: 1rem 1.15rem;
+    border-left: 3px solid currentColor;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* ========================================================= EXAMPLE CARDS ========================================================= */
+.example-card {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(128, 128, 128, 0.22);
+    border-radius: 1rem;
+}
+
+.example-content {
+    padding: 0.5rem;
+}
+
+.example-content h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.15rem;
+}
+
+.example-content p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    opacity: 0.68;
+}
+
+/* Interactive Examples */
+.interactive-example {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 1rem;
+}
+
+.interactive-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.interactive-header h3 {
+    margin: 0;
+}
+
+.interactive-example label,
+.challenge-editor>label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+.code-editor {
+    display: block;
+    width: 100%;
+    min-height: 230px;
+    resize: vertical;
+    padding: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 0.8rem;
+    background: transparent;
+    color: inherit;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    outline: none;
+}
+
+.code-editor:focus {
+    border-color: currentColor;
+    box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.12);
+}
+
+.editor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0.8rem 0 1rem;
+}
+
+.run-button,
+.clear-button,
+.reset-code-btn,
+.hint-button {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 0.65rem;
+    padding: 0.65rem 0.9rem;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.run-button {
+    background: black;
+    color: Canvas;
+}
+
+.run-button:hover,
+.clear-button:hover,
+.reset-code-btn:hover,
+.hint-button:hover {
+    transform: translateY(-1px);
+    background: rgba(128, 128, 128, 0.1);
+}
+
+.run-button:hover {
+    background: green;
+}
+
+/* Output */
+.output-panel {
+    overflow: hidden;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 0.8rem;
+}
+
+.output-header {
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+}
+
+.output-panel pre {
+    min-height: 80px;
+    color: inherit;
+}
+
+/* ========================================================= USE CASE ========================================================= */
+.use-case-card {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 1rem;
+}
+
+.use-case-text {
+    padding: 0.5rem;
+}
+
+.use-case-text h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1.4rem;
+}
+
+.use-case-text p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+.key-insight {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    background: rgba(128, 128, 128, 0.08);
+}
+
+.key-insight p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ========================================================= COMPARISON TABLE ========================================================= */
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 1rem;
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.18);
+    text-align: left;
+    font-size: 0.88rem;
+}
+
+.comparison-table th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.comparison-table td:not(:first-child),
+.comparison-table th:not(:first-child) {
+    text-align: center;
+}
+
+.scope-example {
+    margin-top: 1.5rem;
+}
+
+.scope-example h3 {
+    margin-bottom: 0.8rem;
+}
+
+/* ========================================================= INTERVIEW QUESTIONS ========================================================= */
+.questions-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.question-card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 0.9rem;
+    overflow: hidden;
+}
+
+.question-card summary {
+    display: grid;
+    grid-template-columns: 2.3rem 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+}
+
+.question-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.question-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.6rem;
+    background: rgba(128, 128, 128, 0.1);
+    font-size: 0.7rem;
+}
+
+.question-icon {
+    font-size: 1.3rem;
+    opacity: 0.6;
+    transition: transform 0.2s ease;
+}
+
+.question-card[open] .question-icon {
+    transform: rotate(45deg);
+}
+
+.answer {
+    padding: 0 1rem 1.25rem 4rem;
+}
+
+.answer p,
+.answer li {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+.answer ul {
+    padding-left: 1.25rem;
+}
+
+/* ========================================================= CHALLENGE ========================================================= */
+.challenge-card {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 1rem;
+}
+
+.challenge-description h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1.4rem;
+}
+
+.challenge-description>p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+.expected-output {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    background: rgba(128, 128, 128, 0.08);
+}
+
+.expected-output h4 {
+    margin: 0 0 0.6rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+}
+
+.expected-output pre {
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.hint-box {
+    margin-bottom: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.7rem;
+    background: rgba(128, 128, 128, 0.08);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* ========================================================= TAKEAWAY ========================================================= */
+.takeaway-section {
+    margin-bottom: 3rem;
+}
+
+.takeaway-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 1rem;
+}
+
+.takeaway-icon {
+    font-size: 1.8rem;
+}
+
+.takeaway-card h2 {
+    margin: 0 0 0.6rem;
+    font-size: 1.5rem;
+}
+
+.takeaway-card p:last-child {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+/* ========================================================= PAGINATION ========================================================= */
+.concept-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.pagination-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 0.9rem;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pagination-link:hover {
+    transform: translateY(-2px);
+    background: rgba(128, 128, 128, 0.08);
+}
+
+.pagination-link.next {
+    text-align: right;
+}
+
+.pagination-link span {
+    font-size: 1.3rem;
+}
+
+.pagination-link small {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
+    opacity: 0.55;
+}
+
+/* ========================================================= RESPONSIVE ========================================================= */
+@media (max-width: 800px) {
+    .concept-header {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .definition-grid,
+    .example-card,
+    .use-case-card,
+    .challenge-card {
+        grid-template-columns: 1fr;
+    }
+
+    .answer {
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .concept-detail-page {
+        width: min(94%, 1100px);
+        padding-top: 1.25rem;
+    }
+
+    .concept-header {
+        gap: 1rem;
+    }
+
+    .concept-header-number {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 0.9rem;
+    }
+
+    .concept-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .section-navigation {
+        margin-bottom: 3rem;
+    }
+
+    .definition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .question-card summary {
+        grid-template-columns: 2rem 1fr auto;
+        font-size: 0.9rem;
+    }
+
+    .question-number {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .concept-pagination {
+        flex-direction: column;
+    }
+
+    .pagination-link.next {
+        justify-content: flex-end;
+    }
+}

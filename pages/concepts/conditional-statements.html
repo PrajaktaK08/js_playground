@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/concept-page.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mark">JS</span>
+
+          <span class="logo-text">
+            JavaScript
+            <small>Interview Playground</small>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+    <div class="app-layout">
+      <aside class="sidebar" id="mainNavigation">
+        <nav class="sidebar-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link active"> Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/concepts.html" class="nav-link"> Concepts </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/pages/quiz.html" class="nav-link"> Interview Quiz </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#challenges" class="nav-link"> Coding Challenges </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#debugging" class="nav-link"> Debugging Lab </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#internals" class="nav-link"> JavaScript Internals </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#performance" class="nav-link"> Performance Lab </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#progress" class="nav-link"> Progress </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="concept-detail-page">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../concepts.html"> Concepts </a>
+          <span aria-hidden="true">/</span> <span>Conditional Statements</span>
+        </nav>
+        <!-- ================================================= CONCEPT HEADER ================================================= -->
+        <section class="concept-header">
+          <div class="concept-header-number">05</div>
+          <div class="concept-header-content">
+            <span class="concept-label"> JavaScript Fundamentals </span>
+            <h1>Conditional Statements</h1>
+            <p>
+              Learn how JavaScript makes decisions using <code>if</code>,
+              <code>else</code>, <code>else if</code>, <code>switch</code> and
+              the ternary operator.
+            </p>
+            <div class="concept-meta">
+              <span class="meta-badge"> Beginner </span>
+              <span class="meta-badge"> Control Flow </span>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= SECTION NAVIGATION ================================================= -->
+        <nav class="section-navigation" aria-label="Concept sections">
+          <a href="#definition">Definition</a> <a href="#syntax">Syntax</a>
+          <a href="#types">Types</a> <a href="#examples">Examples</a>
+          <a href="#use-case">Real Life</a> <a href="#interview">Interview</a>
+          <a href="#challenge">Challenge</a>
+        </nav>
+        <!-- ================================================= 01. DEFINITION ================================================= -->
+        <section class="concept-section" id="definition">
+          <div class="section-heading">
+            <span>01</span>
+            <div>
+              <p class="section-kicker">Foundation</p>
+              <h2>What are conditional statements?</h2>
+            </div>
+          </div>
+          <div class="definition-grid">
+            <article class="definition-card">
+              <span class="definition-icon">?</span>
+              <h3>What?</h3>
+              <p>
+                Conditional statements allow JavaScript to execute different
+                code depending on whether a condition is true or false.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon">⏱</span>
+              <h3>When?</h3>
+              <p>
+                Use conditions whenever your program needs to make a decision
+                based on data or a situation.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon">💡</span>
+              <h3>Why?</h3>
+              <p>
+                Applications constantly make decisions such as whether a user is
+                logged in, whether payment succeeded or whether an age
+                requirement is met.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon">⚙</span>
+              <h3>How?</h3>
+              <p>
+                JavaScript evaluates a condition. If the result is truthy, the
+                associated block of code executes.
+              </p>
+            </article>
+          </div>
+        </section>
+        <!-- ================================================= 02. SYNTAX ================================================= -->
+        <section class="concept-section" id="syntax">
+          <div class="section-heading">
+            <span>02</span>
+            <div>
+              <p class="section-kicker">Fundamentals</p>
+              <h2>Syntax</h2>
+            </div>
+          </div>
+          <div class="syntax-card">
+            <div class="code-header"><span>JavaScript</span></div>
+            <pre><code>if (condition) { // code runs when condition is true } if (condition) { // true } else { // false } if (condition1) { // first condition } else if (condition2) { // second condition } else { // none matched }</code></pre>
+          </div>
+        </section>
+        <!-- ================================================= 03. TYPES ================================================= -->
+        <section class="concept-section" id="types">
+          <div class="section-heading">
+            <span>03</span>
+            <div>
+              <p class="section-kicker">Core concepts</p>
+              <h2>Types of conditional statements</h2>
+            </div>
+          </div>
+          <!-- if -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 01 </span>
+              <h3>if statement</h3>
+              <p>Executes code only when a condition is truthy.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const age = 20; if (age >= 18) { console.log("You are an adult."); }</code></pre>
+            </div>
+          </article>
+          <!-- if else -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 02 </span>
+              <h3>if...else</h3>
+              <p>Chooses between two possible execution paths.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const age = 16; if (age >= 18) { console.log("Adult"); } else { console.log("Minor"); }</code></pre>
+            </div>
+          </article>
+          <!-- else if -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 03 </span>
+              <h3>else if</h3>
+              <p>Checks multiple conditions in sequence.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const marks = 82; if (marks >= 90) { console.log("A+"); } else if (marks >= 75) { console.log("A"); } else if (marks >= 60) { console.log("B"); } else { console.log("Needs improvement"); }</code></pre>
+            </div>
+          </article>
+          <!-- nested -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 04 </span>
+              <h3>Nested conditions</h3>
+              <p>A condition can exist inside another condition.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const isLoggedIn = true; const isAdmin = true; if (isLoggedIn) { if (isAdmin) { console.log("Admin dashboard"); } }</code></pre>
+            </div>
+          </article>
+          <!-- switch -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 05 </span>
+              <h3>switch statement</h3>
+              <p>
+                Useful when one value needs to be compared against several
+                possible cases.
+              </p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const day = "Monday"; switch (day) { case "Monday": console.log("Start of the week"); break; case "Friday": console.log("Weekend is near"); break; default: console.log("Regular day"); }</code></pre>
+            </div>
+          </article>
+          <!-- ternary -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 06 </span>
+              <h3>Ternary operator</h3>
+              <p>
+                Best suited for short two-way decisions that produce a value.
+              </p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const age = 20; const message = age >= 18 ? "Allowed" : "Not allowed"; console.log(message);</code></pre>
+            </div>
+          </article>
+        </section>
+        <!-- ================================================= 04. INTERACTIVE EXAMPLE ================================================= -->
+        <section class="concept-section" id="examples">
+          <div class="section-heading">
+            <span>04</span>
+            <div>
+              <p class="section-kicker">Learn by doing</p>
+              <h2>Try conditions yourself</h2>
+            </div>
+          </div>
+          <article class="interactive-example">
+            <div class="interactive-header">
+              <div>
+                <span class="example-number"> Interactive </span>
+                <h3>Build a decision</h3>
+              </div>
+              <button
+                type="button"
+                class="reset-code-btn"
+                data-reset-editor="conditionEditor"
+              >
+                Reset
+              </button>
+            </div>
+            <label for="conditionEditor"> JavaScript code </label>
+            <textarea
+              id="conditionEditor"
+              class="code-editor"
+              spellcheck="false"
+            >
+const age = 21; const hasTicket = true; if (age >= 18 && hasTicket) { console.log("You can enter."); } else { console.log("You cannot enter."); }</textarea
+            >
+            <div class="editor-actions">
+              <button
+                type="button"
+                class="run-button"
+                data-run-editor="conditionEditor"
+                data-output="conditionOutput"
+              >
+                ▶ Run Code
+              </button>
+              <button
+                type="button"
+                class="clear-button"
+                data-clear-output="conditionOutput"
+              >
+                Clear Output
+              </button>
+            </div>
+            <div class="output-panel">
+              <div class="output-header"><span>Console Output</span></div>
+              <pre id="conditionOutput">
+Click "Run Code" to see the output.</pre
+              >
+            </div>
+          </article>
+        </section>
+        <!-- ================================================= 05. REAL LIFE USE CASE ================================================= -->
+        <section class="concept-section" id="use-case">
+          <div class="section-heading">
+            <span>05</span>
+            <div>
+              <p class="section-kicker">Practical JavaScript</p>
+              <h2>Real-life use case</h2>
+            </div>
+          </div>
+          <div class="use-case-card">
+            <div class="use-case-text">
+              <span class="use-case-label"> Authentication </span>
+              <h3>User access control</h3>
+              <p>
+                Websites use conditions to decide what users are allowed to
+                access based on login status and permissions.
+              </p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const isLoggedIn = true; const role = "admin"; if (!isLoggedIn) { console.log("Please log in."); } else if (role === "admin") { console.log("Open admin dashboard."); } else { console.log("Open user dashboard."); }</code></pre>
+            </div>
+          </div>
+          <div class="key-insight">
+            <span>💡</span>
+            <p>
+              <strong>Think in decisions.</strong> Whenever your application
+              needs to answer a question such as "Is the user logged in?" or "Is
+              the payment successful?", you probably need conditional logic.
+            </p>
+          </div>
+        </section>
+        <!-- ================================================= 06. INTERVIEW QUESTIONS ================================================= -->
+        <section class="concept-section" id="interview">
+          <div class="section-heading">
+            <span>06</span>
+            <div>
+              <p class="section-kicker">Interview preparation</p>
+              <h2>Top 5 interview questions</h2>
+            </div>
+          </div>
+          <div class="questions-list">
+            <!-- Question 1 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 01 </span>
+                <span>
+                  What is the difference between if...else and switch?
+                </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  <code>if...else</code> is flexible and works well with ranges
+                  and complex conditions. A <code>switch</code> is useful when
+                  comparing one expression against multiple discrete values.
+                </p>
+              </div>
+            </details>
+            <!-- Question 2 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 02 </span>
+                <span> What are truthy and falsy values? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  JavaScript converts values to boolean context when evaluating
+                  conditions. Values such as <code>false</code>, <code>0</code>,
+                  <code>""</code>, <code>null</code>, <code>undefined</code> and
+                  <code>NaN</code> are falsy. Most other values are truthy.
+                </p>
+                <div class="code-block">
+                  <pre><code>if ("Hello") { console.log("Truthy"); } if (0) { console.log("This will not run"); }</code></pre>
+                </div>
+              </div>
+            </details>
+            <!-- Question 3 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 03 </span>
+                <span> What happens if break is omitted in switch? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  Without <code>break</code>, execution continues into the
+                  following cases. This behavior is called fall-through.
+                </p>
+                <div class="code-block">
+                  <pre><code>const value = 1; switch (value) { case 1: console.log("One"); case 2: console.log("Two"); }</code></pre>
+                </div>
+                <p>
+                  Both messages can be printed because the first case does not
+                  stop execution.
+                </p>
+              </div>
+            </details>
+            <!-- Question 4 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 04 </span>
+                <span> When should you use the ternary operator? </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  Use the ternary operator for short and readable two-way
+                  decisions that produce a value. Avoid deeply nested ternaries
+                  because they can reduce readability.
+                </p>
+                <div class="code-block">
+                  <pre><code>const age = 20; const status = age >= 18 ? "Adult" : "Minor";</code></pre>
+                </div>
+              </div>
+            </details>
+            <!-- Question 5 -->
+            <details class="question-card">
+              <summary>
+                <span class="question-number"> 05 </span>
+                <span>
+                  What is the difference between nested conditions and else if?
+                </span>
+                <span class="question-icon"> + </span>
+              </summary>
+              <div class="answer">
+                <p>
+                  An <code>else if</code> chain checks alternative conditions at
+                  the same decision level. Nested conditions place one decision
+                  inside another and are useful when the second decision depends
+                  on the first.
+                </p>
+              </div>
+            </details>
+          </div>
+        </section>
+        <!-- ================================================= 07. CODING CHALLENGE ================================================= -->
+        <section class="concept-section" id="challenge">
+          <div class="section-heading">
+            <span>07</span>
+            <div>
+              <p class="section-kicker">Code in an interview</p>
+              <h2>Interview coding challenge</h2>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-description">
+              <span class="challenge-label"> Coding Challenge </span>
+              <h3>Check user access</h3>
+              <p>
+                Create a program that checks whether a user can access an admin
+                dashboard.
+              </p>
+              <p>
+                The user must be logged in and must have the
+                <code>admin</code> role.
+              </p>
+              <div class="expected-output">
+                <h4>Expected output</h4>
+                <pre>Access granted</pre>
+              </div>
+            </div>
+            <div class="challenge-editor">
+              <label for="conditionChallengeEditor">
+                Write your solution
+              </label>
+              <textarea
+                id="conditionChallengeEditor"
+                class="code-editor"
+                spellcheck="false"
+              >
+const isLoggedIn = true; const role = "admin"; // Write your condition here </textarea
+              >
+              <div class="editor-actions">
+                <button
+                  type="button"
+                  class="run-button"
+                  data-run-editor="conditionChallengeEditor"
+                  data-output="conditionChallengeOutput"
+                >
+                  ▶ Run Code
+                </button>
+                <button
+                  type="button"
+                  class="hint-button"
+                  data-hint-target="conditionHint"
+                >
+                  💡 Hint
+                </button>
+              </div>
+              <div class="hint-box" id="conditionHint" hidden>
+                Use an <code>if</code> statement with the
+                <code>&amp;&amp;</code> operator. Check both
+                <code>isLoggedIn</code> and whether
+                <code>role === "admin"</code>.
+              </div>
+              <div class="output-panel">
+                <div class="output-header"><span>Console Output</span></div>
+                <pre id="conditionChallengeOutput">
+Run your solution to see the output.</pre
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= TAKEAWAY ================================================= -->
+        <section class="takeaway-section">
+          <div class="takeaway-card">
+            <span class="takeaway-icon"> 🎯 </span>
+            <div>
+              <p class="section-kicker">Remember</p>
+              <h2>Conditions control the flow of your program.</h2>
+              <p>
+                Start with <code>if</code> and <code>if...else</code>. Use
+                <code>else if</code> for multiple conditions,
+                <code>switch</code> for discrete values and the ternary operator
+                for simple two-way expressions.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= PAGINATION ================================================= -->
+        <nav class="concept-pagination" aria-label="Concept pagination">
+          <a href="operators.html" class="pagination-link">
+            <span>←</span>
+            <div>
+              <small>Previous Concept</small> <strong>Operators</strong>
+            </div>
+          </a>
+          <a href="loops.html" class="pagination-link next">
+            <div><small>Next Concept</small> <strong>Loops</strong></div>
+            <span>→</span>
+          </a>
+        </nav>
+      </main>
+      <!-- ===================================================== OVERLAY ===================================================== -->
+      <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>JS Playground 2026. All rights reserved.😊</p>
+      </div>
+    </footer>
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+  </body>
+</html>

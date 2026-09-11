@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/concept-page.css">
+</head>
+<body>
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="../../index.html" class="logo">
+                <span class="logo-mark">JS</span>
+
+                <span class="logo-text">
+                    JavaScript
+                    <small>Interview Playground</small>
+                </span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+    <div class="app-layout">
+        <aside class="sidebar" id="mainNavigation">
+            <nav class="sidebar-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/concepts.html" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+     <main class="concept-detail-page">
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <a href="../concepts.html">
+            Concepts
+        </a>
+
+        <span aria-hidden="true">/</span>
+
+        <span>Closures</span>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONCEPT HEADER
+         ===================================================== -->
+
+    <section class="concept-header">
+
+        <div class="concept-header-number">
+            10
+        </div>
+
+        <div class="concept-header-content">
+
+            <span class="concept-label">
+                JavaScript Fundamentals
+            </span>
+
+            <h1>
+                Closures
+            </h1>
+
+            <p>
+                Understand how a function can remember and access variables
+                from its outer lexical scope even after the outer function
+                has finished executing.
+            </p>
+
+            <div class="concept-meta">
+
+                <span class="meta-badge">
+                    Intermediate
+                </span>
+
+                <span class="meta-badge">
+                    Functions
+                </span>
+
+                <span class="meta-badge">
+                    Interview Essential
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION NAVIGATION
+         ===================================================== -->
+
+    <nav class="section-navigation" aria-label="Concept sections">
+
+        <a href="#definition">Definition</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#how">How It Works</a>
+        <a href="#examples">Examples</a>
+        <a href="#use-case">Real Life</a>
+        <a href="#interview">Interview</a>
+        <a href="#challenge">Challenge</a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         01. DEFINITION
+         ===================================================== -->
+
+    <section class="concept-section" id="definition">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Foundation
+                </p>
+
+                <h2>
+                    What is a closure?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="definition-grid">
+
+            <article class="definition-card">
+
+                <span class="definition-icon">?</span>
+
+                <h3>
+                    What?
+                </h3>
+
+                <p>
+                    A closure is created when a function retains access to
+                    variables from its surrounding lexical scope, even when
+                    that outer scope is no longer executing.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⏱</span>
+
+                <h3>
+                    When?
+                </h3>
+
+                <p>
+                    Closures are commonly used when functions need to
+                    remember state, create private variables, implement
+                    callbacks or preserve data between function calls.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">💡</span>
+
+                <h3>
+                    Why?
+                </h3>
+
+                <p>
+                    Closures allow developers to preserve state and create
+                    controlled access to data without exposing variables
+                    globally.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⚙</span>
+
+                <h3>
+                    How?
+                </h3>
+
+                <p>
+                    When an inner function references variables from an
+                    outer lexical scope, JavaScript keeps the necessary
+                    lexical environment available for that function.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02. SYNTAX
+         ===================================================== -->
+
+    <section class="concept-section" id="syntax">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Fundamentals
+                </p>
+
+                <h2>
+                    Closure syntax
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="syntax-card">
+
+            <div class="code-header">
+                <span>JavaScript</span>
+            </div>
+
+            <pre><code>function outerFunction() {
+
+    let outerVariable = "Hello";
+
+    function innerFunction() {
+
+        console.log(outerVariable);
+
+    }
+
+    return innerFunction;
+}
+
+
+const result = outerFunction();
+
+result();
+
+// Hello</code></pre>
+
+        </div>
+
+
+        <div class="syntax-note">
+
+            <strong>Remember:</strong>
+
+            <span>
+                The important part is not simply having a nested function.
+                A closure exists when the inner function retains access to
+                variables from its surrounding lexical environment.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03. HOW CLOSURES WORK
+         ===================================================== -->
+
+    <section class="concept-section" id="how">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Core concept
+                </p>
+
+                <h2>
+                    How closures work
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Step 01
+                </span>
+
+                <h3>
+                    Outer function creates a variable
+                </h3>
+
+                <p>
+                    The outer function creates a variable inside its local
+                    scope.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <pre><code>function outer() {
+
+    let message = "Hello";
+
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Step 02
+                </span>
+
+                <h3>
+                    Inner function accesses it
+                </h3>
+
+                <p>
+                    The nested function references the variable from the
+                    surrounding lexical scope.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <pre><code>function outer() {
+
+    let message = "Hello";
+
+    function inner() {
+
+        console.log(message);
+
+    }
+
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Step 03
+                </span>
+
+                <h3>
+                    Return the inner function
+                </h3>
+
+                <p>
+                    The inner function can be returned and called later.
+                    It still retains access to the variable it referenced.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <pre><code>function outer() {
+
+    let message = "Hello";
+
+    function inner() {
+
+        console.log(message);
+
+    }
+
+    return inner;
+}
+
+const greet = outer();
+
+greet();
+
+// Hello</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Think of a closure as a function carrying a
+                backpack:</strong>
+                the function carries references to the outer variables it
+                needs even after the outer function has finished executing.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         04. COMMON CLOSURE EXAMPLES
+         ===================================================== -->
+
+    <section class="concept-section" id="examples">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Learn by doing
+                </p>
+
+                <h2>
+                    Common closure examples
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- COUNTER -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    Private counter
+                </h3>
+
+                <p>
+                    Closures can preserve a private counter that cannot be
+                    directly accessed from outside the function.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function createCounter() {
+
+    let count = 0;
+
+    return function () {
+
+        count++;
+
+        return count;
+
+    };
+}
+
+const counter = createCounter();
+
+console.log(counter());
+// 1
+
+console.log(counter());
+// 2
+
+console.log(counter());
+// 3</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- MULTIPLE CLOSURES -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    Independent closure state
+                </h3>
+
+                <p>
+                    Each call to the outer function creates a separate
+                    lexical environment, so different closures can maintain
+                    independent state.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function createCounter() {
+
+    let count = 0;
+
+    return function () {
+
+        count++;
+
+        return count;
+
+    };
+}
+
+const counterA = createCounter();
+const counterB = createCounter();
+
+console.log(counterA());
+// 1
+
+console.log(counterA());
+// 2
+
+console.log(counterB());
+// 1</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- FUNCTION FACTORY -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    Function factory
+                </h3>
+
+                <p>
+                    A function can create other functions with customized
+                    behavior using closures.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function createMultiplier(multiplier) {
+
+    return function (number) {
+
+        return number * multiplier;
+
+    };
+
+}
+
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+
+console.log(double(5));
+// 10
+
+console.log(triple(5));
+// 15</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- CALLBACK -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 04
+                </span>
+
+                <h3>
+                    Closures with callbacks
+                </h3>
+
+                <p>
+                    Callback functions often form closures because they can
+                    retain access to variables from the scope where they
+                    were created.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function greetLater(name) {
+
+    setTimeout(function () {
+
+        console.log(`Hello, ${name}`);
+
+    }, 1000);
+
+}
+
+greetLater("Amit");</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- INTERACTIVE -->
+
+        <article class="interactive-example">
+
+            <div class="interactive-header">
+
+                <div>
+
+                    <span class="example-number">
+                        Interactive
+                    </span>
+
+                    <h3>
+                        Experiment with closures
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="reset-code-btn"
+                    data-reset-editor="closureEditor"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <label for="closureEditor">
+                JavaScript code
+            </label>
+
+
+            <textarea
+                id="closureEditor"
+                class="code-editor"
+                spellcheck="false"
+            >function createCounter() {
+
+    let count = 0;
+
+    return function () {
+
+        count++;
+
+        return count;
+
+    };
+
+}
+
+const counter = createCounter();
+
+console.log(counter());
+console.log(counter());
+console.log(counter());</textarea>
+
+
+            <div class="editor-actions">
+
+                <button
+                    type="button"
+                    class="run-button"
+                    data-run-editor="closureEditor"
+                    data-output="closureOutput"
+                >
+                    ▶ Run Code
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-button"
+                    data-clear-output="closureOutput"
+                >
+                    Clear Output
+                </button>
+
+            </div>
+
+
+            <div class="output-panel">
+
+                <div class="output-header">
+                    <span>
+                        Console Output
+                    </span>
+                </div>
+
+                <pre id="closureOutput">Click "Run Code" to see the output.</pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         05. CLOSURE AND DATA PRIVACY
+         ===================================================== -->
+
+    <section class="concept-section" id="privacy">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Important use
+                </p>
+
+                <h2>
+                    Closures and data privacy
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    Private State
+                </span>
+
+                <h3>
+                    Hide implementation details
+                </h3>
+
+                <p>
+                    Closures can keep internal variables inaccessible
+                    directly from outside code while exposing only the
+                    operations that should be allowed.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function createBankAccount(initialBalance) {
+
+    let balance = initialBalance;
+
+    return {
+
+        deposit(amount) {
+
+            balance += amount;
+
+        },
+
+        getBalance() {
+
+            return balance;
+
+        }
+
+    };
+
+}
+
+const account = createBankAccount(1000);
+
+account.deposit(500);
+
+console.log(account.getBalance());
+// 1500
+
+// Direct access to balance is unavailable:
+// account.balance
+// undefined</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Important:</strong>
+                Closures are not the only way to create private state in
+                modern JavaScript. JavaScript also provides private class
+                fields using the <code>#</code> syntax. Closures remain
+                important because they are fundamental to lexical scoping
+                and functional patterns.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06. REAL LIFE USE CASE
+         ===================================================== -->
+
+    <section class="concept-section" id="use-case">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Practical JavaScript
+                </p>
+
+                <h2>
+                    Real-life use case
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    User Interface
+                </span>
+
+                <h3>
+                    Create a reusable notification function
+                </h3>
+
+                <p>
+                    A closure can remember configuration such as a
+                    notification type while exposing a simple function that
+                    displays messages.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>function createNotifier(type) {
+
+    return function (message) {
+
+        console.log(`[${type}] ${message}`);
+
+    };
+
+}
+
+const successNotifier =
+    createNotifier("SUCCESS");
+
+const errorNotifier =
+    createNotifier("ERROR");
+
+successNotifier("Profile updated");
+// [SUCCESS] Profile updated
+
+errorNotifier("Payment failed");
+// [ERROR] Payment failed</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>🎯</span>
+
+            <p>
+                <strong>Where you will see closures:</strong>
+                event handlers, callbacks, timers, function factories,
+                memoization, private state and many JavaScript frameworks
+                and libraries.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         07. INTERVIEW QUESTIONS
+         ===================================================== -->
+
+    <section class="concept-section" id="interview">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Interview preparation
+                </p>
+
+                <h2>
+                    Top 5 interview questions
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="questions-list">
+
+
+            <!-- QUESTION 01 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        01
+                    </span>
+
+                    <span>
+                        What is a closure in JavaScript?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        A closure is a function together with access to the
+                        lexical environment in which that function was
+                        created. It allows the function to access variables
+                        from its surrounding scope even after that outer
+                        execution has finished.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function outer() {
+
+    const message = "Hello";
+
+    return function () {
+
+        console.log(message);
+
+    };
+
+}
+
+const greet = outer();
+
+greet();
+// Hello</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 02 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        02
+                    </span>
+
+                    <span>
+                        Why does a closure remember variables after the outer function finishes?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        The inner function retains a reference to the
+                        lexical environment containing the variables it
+                        needs. As long as that closure remains reachable,
+                        the required environment can remain available.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 03 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        03
+                    </span>
+
+                    <span>
+                        What are practical uses of closures?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Common uses include private state, function
+                        factories, callbacks, event handlers, memoization
+                        and preserving state between function calls.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function createMultiplier(value) {
+
+    return number => number * value;
+
+}
+
+const double = createMultiplier(2);
+
+console.log(double(10));
+// 20</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 04 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        04
+                    </span>
+
+                    <span>
+                        Can closures cause memory problems?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        A closure itself is not a memory leak. However,
+                        unnecessarily keeping closures or references alive
+                        can keep otherwise-unused objects reachable for
+                        longer than necessary. Good lifecycle management is
+                        important for long-running applications.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- QUESTION 05 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        05
+                    </span>
+
+                    <span>
+                        What is the difference between scope and closure?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        Scope determines where variables can be accessed.
+                        A closure is the behavior of a function retaining
+                        access to variables from its surrounding lexical
+                        scope after that surrounding execution has finished.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>function outer() {
+
+    let count = 0;
+
+    return function () {
+
+        count++;
+
+        return count;
+
+    };
+
+}
+
+const counter = outer();
+
+console.log(counter());
+// 1</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         08. CODING CHALLENGE
+         ===================================================== -->
+
+    <section class="concept-section" id="challenge">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+
+                <p class="section-kicker">
+                    Code in an interview
+                </p>
+
+                <h2>
+                    Interview coding challenge
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="challenge-card">
+
+
+            <div class="challenge-description">
+
+                <span class="challenge-label">
+                    Coding Challenge
+                </span>
+
+                <h3>
+                    Create a counter using closure
+                </h3>
+
+                <p>
+                    Create a function called
+                    <code>createCounter()</code> that keeps its count
+                    private and returns another function that increments and
+                    returns the count.
+                </p>
+
+
+                <div class="expected-output">
+
+                    <h4>
+                        Expected output
+                    </h4>
+
+                    <pre>1
+2
+3</pre>
+
+                </div>
+
+            </div>
+
+
+            <div class="challenge-editor">
+
+                <label for="closureChallengeEditor">
+                    Write your solution
+                </label>
+
+
+                <textarea
+                    id="closureChallengeEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                >function createCounter() {
+
+    // Create a private count variable
+
+    // Return a function that updates count
+
+}
+
+
+const counter = createCounter();
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
+</textarea>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        data-run-editor="closureChallengeEditor"
+                        data-output="closureChallengeOutput"
+                    >
+                        ▶ Run Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hint-button"
+                        data-hint-target="closureHint"
+                    >
+                        💡 Hint
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="hint-box"
+                    id="closureHint"
+                    hidden
+                >
+                    Create <code>let count = 0</code> inside
+                    <code>createCounter()</code>. Return an inner function
+                    that increments <code>count</code> and then returns it.
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="output-header">
+                        <span>
+                            Console Output
+                        </span>
+                    </div>
+
+                    <pre id="closureChallengeOutput">Run your solution to see the output.</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TAKEAWAY
+         ===================================================== -->
+
+    <section class="takeaway-section">
+
+        <div class="takeaway-card">
+
+            <span class="takeaway-icon">
+                🎯
+            </span>
+
+
+            <div>
+
+                <p class="section-kicker">
+                    Remember
+                </p>
+
+                <h2>
+                    A closure lets a function remember its surrounding scope.
+                </h2>
+
+                <p>
+                    Master closures by understanding lexical scope first.
+                    Then practice counters, function factories, callbacks
+                    and private state. Once closures become clear, many
+                    advanced JavaScript topics become much easier to
+                    understand.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGINATION
+         ===================================================== -->
+
+    <nav
+        class="concept-pagination"
+        aria-label="Concept pagination"
+    >
+
+        <a
+            href="hoisting.html"
+            class="pagination-link"
+        >
+
+            <span>←</span>
+
+            <div>
+
+                <small>
+                    Previous Concept
+                </small>
+
+                <strong>
+                    Hoisting
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="this-keyword.html"
+            class="pagination-link next"
+        >
+
+            <div>
+
+                <small>
+                    Next Concept
+                </small>
+
+                <strong>
+                    this Keyword
+                </strong>
+
+            </div>
+
+            <span>→</span>
+
+        </a>
+
+    </nav>
+
+</main>   
+
+        
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+ <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+
+</body>
+
+</html>

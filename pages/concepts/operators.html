@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/concept-page.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mark">JS</span>
+
+          <span class="logo-text">
+            JavaScript
+            <small>Interview Playground</small>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+    <div class="app-layout">
+      <aside class="sidebar" id="mainNavigation">
+        <nav class="sidebar-nav" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link active"> Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a href="/pages/concepts.html" class="nav-link"> Concepts </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/pages/quiz.html" class="nav-link"> Interview Quiz </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#challenges" class="nav-link"> Coding Challenges </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#debugging" class="nav-link"> Debugging Lab </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#internals" class="nav-link"> JavaScript Internals </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#performance" class="nav-link"> Performance Lab </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#progress" class="nav-link"> Progress </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="concept-detail-page">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../concepts.html"> Concepts </a>
+          <span aria-hidden="true">/</span> <span>Operators</span>
+        </nav>
+        <!-- ================================================= CONCEPT HEADER ================================================= -->
+        <section class="concept-header">
+          <div class="concept-header-number">04</div>
+          <div class="concept-header-content">
+            <span class="concept-label"> JavaScript Fundamentals </span>
+            <h1>Operators</h1>
+            <p>
+              Learn how JavaScript uses operators to perform calculations,
+              comparisons, assignments and logical operations.
+            </p>
+            <div class="concept-meta">
+              <span class="meta-badge"> Beginner </span>
+              <span class="meta-badge"> Core JavaScript </span>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= SECTION NAVIGATION ================================================= -->
+        <nav class="section-navigation" aria-label="Concept sections">
+          <a href="#definition">Definition</a> <a href="#syntax">Syntax</a>
+          <a href="#types">Types</a> <a href="#examples">Examples</a>
+          <a href="#use-case">Real Life</a> <a href="#interview">Interview</a>
+          <a href="#challenge">Challenge</a>
+        </nav>
+        <!-- ================================================= 01. DEFINITION ================================================= -->
+        <section class="concept-section" id="definition">
+          <div class="section-heading">
+            <span>01</span>
+            <div>
+              <p class="section-kicker">Foundation</p>
+              <h2>What are operators?</h2>
+            </div>
+          </div>
+          <div class="definition-grid">
+            <article class="definition-card">
+              <span class="definition-icon">?</span>
+              <h3>What?</h3>
+              <p>
+                Operators are special symbols or keywords that perform an
+                operation on one or more values.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon">⏱</span>
+              <h3>When?</h3>
+              <p>
+                Operators are used whenever we need to calculate, compare,
+                assign, combine or evaluate values.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon">💡</span>
+              <h3>Why?</h3>
+              <p>
+                Operators allow programs to perform calculations, make decisions
+                and manipulate data.
+              </p>
+            </article>
+            <article class="definition-card">
+              <span class="definition-icon">⚙</span>
+              <h3>How?</h3>
+              <p>
+                JavaScript evaluates an operator together with its operands and
+                produces a result.
+              </p>
+            </article>
+          </div>
+        </section>
+        <!-- ================================================= 02. SYNTAX ================================================= -->
+        <section class="concept-section" id="syntax">
+          <div class="section-heading">
+            <span>02</span>
+            <div>
+              <p class="section-kicker">Fundamentals</p>
+              <h2>Operator syntax</h2>
+            </div>
+          </div>
+          <div class="syntax-card">
+            <div class="code-header"><span>JavaScript</span></div>
+            <pre><code>operand operator operand 10 + 5 age >= 18 isLoggedIn && isAdmin</code></pre>
+          </div>
+          <div class="syntax-note">
+            <strong>Remember:</strong>
+            <span>
+              The values that an operator works with are called operands.
+              Different operators perform different types of operations.
+            </span>
+          </div>
+        </section>
+        <!-- ================================================= 03. OPERATOR TYPES ================================================= -->
+        <section class="concept-section" id="types">
+          <div class="section-heading">
+            <span>03</span>
+            <div>
+              <p class="section-kicker">Core concepts</p>
+              <h2>Types of operators</h2>
+            </div>
+          </div>
+          <!-- Arithmetic -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 01 </span>
+              <h3>Arithmetic operators</h3>
+              <p>Used for mathematical calculations.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>let a = 10; let b = 3; console.log(a + b); // 13 console.log(a - b); // 7 console.log(a * b); // 30 console.log(a / b); // 3.333... console.log(a % b); // 1 console.log(a ** b); // 1000</code></pre>
+            </div>
+          </article>
+          <!-- Assignment -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 02 </span>
+              <h3>Assignment operators</h3>
+              <p>Used to assign or update values.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>let score = 10; score += 5; score -= 2; score *= 2; console.log(score);</code></pre>
+            </div>
+          </article>
+          <!-- Comparison -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 03 </span>
+              <h3>Comparison operators</h3>
+              <p>Used to compare values and produce a boolean result.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const age = 25; console.log(age > 18); // true console.log(age === 25); // true console.log(age !== 30); // true console.log(age < 18); // false</code></pre>
+            </div>
+          </article>
+          <!-- Logical -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 04 </span>
+              <h3>Logical operators</h3>
+              <p>Used to combine or reverse boolean expressions.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const age = 25; const hasLicense = true; console.log(age >= 18 && hasLicense); console.log(age < 18 || hasLicense); console.log(!hasLicense);</code></pre>
+            </div>
+          </article>
+          <!-- Ternary -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 05 </span>
+              <h3>Ternary operator</h3>
+              <p>A compact way to choose between two expressions.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const age = 20; const status = age >= 18 ? "Adult" : "Minor"; console.log(status);</code></pre>
+            </div>
+          </article>
+          <!-- Modern -->
+          <article class="example-card">
+            <div class="example-content">
+              <span class="example-number"> Type 06 </span>
+              <h3>Modern operators</h3>
+              <p>
+                Modern JavaScript provides operators such as nullish coalescing
+                and optional chaining.
+              </p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const username = null; const displayName = username ?? "Guest"; console.log(displayName); const user = { profile: { name: "Rahul" } }; console.log(user.profile?.name);</code></pre>
+            </div>
+          </article>
+        </section>
+        <!-- ================================================= 04. INTERACTIVE EXAMPLE ================================================= -->
+        <section class="concept-section" id="examples">
+          <div class="section-heading">
+            <span>04</span>
+            <div>
+              <p class="section-kicker">Learn by doing</p>
+              <h2>Try operators yourself</h2>
+            </div>
+          </div>
+          <article class="interactive-example">
+            <div class="interactive-header">
+              <div>
+                <span class="example-number"> Interactive </span>
+                <h3>Experiment with operators</h3>
+              </div>
+              <button
+                type="button"
+                class="reset-code-btn"
+                data-reset-editor="operatorEditor"
+              >
+                Reset
+              </button>
+            </div>
+            <label for="operatorEditor"> JavaScript code </label>
+            <textarea
+              id="operatorEditor"
+              class="code-editor"
+              spellcheck="false"
+            >
+const price = 1000; const quantity = 3; const total = price * quantity; console.log("Total:", total); console.log("Discount applied:", total >= 3000);</textarea
+            >
+            <div class="editor-actions">
+              <button
+                type="button"
+                class="run-button"
+                data-run-editor="operatorEditor"
+                data-output="operatorOutput"
+              >
+                ▶ Run Code
+              </button>
+              <button
+                type="button"
+                class="clear-button"
+                data-clear-output="operatorOutput"
+              >
+                Clear Output
+              </button>
+            </div>
+            <div class="output-panel">
+              <div class="output-header"><span>Console Output</span></div>
+              <pre id="operatorOutput">Click "Run Code" to see the output.</pre>
+            </div>
+          </article>
+        </section>
+        <!-- ================================================= 05. REAL LIFE USE CASE ================================================= -->
+        <section class="concept-section" id="use-case">
+          <div class="section-heading">
+            <span>05</span>
+            <div>
+              <p class="section-kicker">Practical JavaScript</p>
+              <h2>Real-life use case</h2>
+            </div>
+          </div>
+          <div class="use-case-card">
+            <div class="use-case-text">
+              <span class="use-case-label"> E-Commerce </span>
+              <h3>Shopping cart calculation</h3>
+              <p>
+                Operators are used throughout shopping applications to calculate
+                totals, apply discounts and determine whether a customer
+                qualifies for special offers.
+              </p>
+            </div>
+            <div class="code-block">
+              <div class="code-header"><span>JavaScript</span></div>
+              <pre><code>const price = 2000; const quantity = 3; const subtotal = price * quantity; const discount = subtotal >= 5000 ? 500 : 0; const total = subtotal - discount; console.log("Subtotal:", subtotal); console.log("Discount:", discount); console.log("Total:", total);</code></pre>
+            </div>
+          </div>
+          <div class="key-insight">
+            <span>💡</span>
+            <p>
+              <strong>Interview tip:</strong> When comparing values, prefer
+              strict equality <code>===</code> over loose equality
+              <code>==</code> unless you intentionally want type coercion.
+            </p>
+          </div>
+        </section>
+        <!-- ================================================= 06. INTERVIEW QUESTIONS ================================================= -->
+        <section class="concept-section" id="interview">
+          <div class="section-heading">
+            <span>06</span>
+            <div>
+              <p class="section-kicker">Interview preparation</p>
+              <h2>Top 5 interview questions</h2>
+            </div>
+          </div>
+          <div class="questions-list">
+            <details class="question-card">
+              <summary>
+                <span class="question-number">01</span>
+                <span> What is the difference between == and ===? </span>
+                <span class="question-icon">+</span>
+              </summary>
+              <div class="answer">
+                <p>
+                  <code>==</code> performs loose equality and may convert types
+                  before comparing. <code>===</code> performs strict equality
+                  and checks both value and type.
+                </p>
+                <div class="code-block">
+                  <pre><code>5 == "5"; // true 5 === "5"; // false</code></pre>
+                </div>
+              </div>
+            </details>
+            <details class="question-card">
+              <summary>
+                <span class="question-number">02</span>
+                <span> What is the difference between && and ||? </span>
+                <span class="question-icon">+</span>
+              </summary>
+              <div class="answer">
+                <p>
+                  <code>&amp;&amp;</code> evaluates to the first falsy value or
+                  the last value when all values are truthy.
+                  <code>||</code> evaluates to the first truthy value or the
+                  last value when all values are falsy.
+                </p>
+                <div class="code-block">
+                  <pre><code>console.log(true && "Hello"); // Hello console.log(false || "Guest"); // Guest</code></pre>
+                </div>
+              </div>
+            </details>
+            <details class="question-card">
+              <summary>
+                <span class="question-number">03</span>
+                <span> What is the difference between ++x and x++? </span>
+                <span class="question-icon">+</span>
+              </summary>
+              <div class="answer">
+                <p>
+                  <code>++x</code> increments the value before the expression is
+                  evaluated. <code>x++</code> increments it after the current
+                  expression is evaluated.
+                </p>
+                <div class="code-block">
+                  <pre><code>let x = 5; console.log(++x); // 6 let y = 5; console.log(y++); // 5 console.log(y); // 6</code></pre>
+                </div>
+              </div>
+            </details>
+            <details class="question-card">
+              <summary>
+                <span class="question-number">04</span>
+                <span> What does the ternary operator do? </span>
+                <span class="question-icon">+</span>
+              </summary>
+              <div class="answer">
+                <p>
+                  The ternary operator provides a compact way to choose between
+                  two expressions based on a condition.
+                </p>
+                <div class="code-block">
+                  <pre><code>const age = 20; const result = age >= 18 ? "Adult" : "Minor";</code></pre>
+                </div>
+              </div>
+            </details>
+            <details class="question-card">
+              <summary>
+                <span class="question-number">05</span>
+                <span> What is the difference between || and ??? </span>
+                <span class="question-icon">+</span>
+              </summary>
+              <div class="answer">
+                <p>
+                  <code>||</code> falls back for any falsy value, while
+                  <code>??</code> falls back only when the value is
+                  <code>null</code> or <code>undefined</code>.
+                </p>
+                <div class="code-block">
+                  <pre><code>const count = 0; console.log(count || 10); // 10 console.log(count ?? 10); // 0</code></pre>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+        <!-- ================================================= 07. CODING CHALLENGE ================================================= -->
+        <section class="concept-section" id="challenge">
+          <div class="section-heading">
+            <span>07</span>
+            <div>
+              <p class="section-kicker">Code in an interview</p>
+              <h2>Interview coding challenge</h2>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-description">
+              <span class="challenge-label"> Coding Challenge </span>
+              <h3>Calculate shopping total</h3>
+              <p>
+                Create variables for product price and quantity. Calculate the
+                subtotal. If the subtotal is at least ₹5,000, apply a ₹500
+                discount. Finally, calculate and print the total.
+              </p>
+              <div class="expected-output">
+                <h4>Expected output</h4>
+                <pre>Subtotal: 6000 Discount: 500 Total: 5500</pre>
+              </div>
+            </div>
+            <div class="challenge-editor">
+              <label for="operatorChallengeEditor"> Write your solution </label>
+              <textarea
+                id="operatorChallengeEditor"
+                class="code-editor"
+                spellcheck="false"
+              >
+const price = 2000; const quantity = 3; // Calculate subtotal // Calculate discount // Calculate total // Print the result </textarea
+              >
+              <div class="editor-actions">
+                <button
+                  type="button"
+                  class="run-button"
+                  data-run-editor="operatorChallengeEditor"
+                  data-output="operatorChallengeOutput"
+                >
+                  ▶ Run Code
+                </button>
+                <button
+                  type="button"
+                  class="hint-button"
+                  data-hint-target="operatorHint"
+                >
+                  💡 Hint
+                </button>
+              </div>
+              <div class="hint-box" id="operatorHint" hidden>
+                Multiply price by quantity for the subtotal. Then use a ternary
+                operator or if statement to determine the discount.
+              </div>
+              <div class="output-panel">
+                <div class="output-header"><span>Console Output</span></div>
+                <pre id="operatorChallengeOutput">
+Run your solution to see the output.</pre
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= TAKEAWAY ================================================= -->
+        <section class="takeaway-section">
+          <div class="takeaway-card">
+            <span class="takeaway-icon">🎯</span>
+            <div>
+              <p class="section-kicker">Remember</p>
+              <h2>Operators are the building blocks of expressions.</h2>
+              <p>
+                Master arithmetic, comparison and logical operators first. Then
+                understand ternary, nullish coalescing and optional chaining for
+                modern JavaScript.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- ================================================= PAGINATION ================================================= -->
+        <nav class="concept-pagination" aria-label="Concept pagination">
+          <a href="type-coercion.html" class="pagination-link">
+            <span>←</span>
+            <div>
+              <small>Previous Concept</small>
+              <strong>Type Coercion &amp; Conversion</strong>
+            </div>
+          </a>
+          <a href="conditional-statements.html" class="pagination-link next">
+            <div>
+              <small>Next Concept</small>
+              <strong>Conditional Statements</strong>
+            </div>
+            <span>→</span>
+          </a>
+        </nav>
+      </main>
+      <!-- ===================================================== OVERLAY ===================================================== -->
+      <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>JS Playground 2026. All rights reserved.😊</p>
+      </div>
+    </footer>
+
+    <!-- Global JavaScript -->
+
+    <script src="../../js/app.js"></script>
+
+    <script src="../../js/concept-page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+.concepts-page {
+  min-height: 100vh;
+  padding: 3rem 5%;
+}
+/* Hero */
+.concepts-hero {
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+}
+.hero-content {
+  max-width: 760px;
+}
+.concepts-hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+.concepts-hero h1 span {
+  display: block;
+}
+.concepts-hero p {
+  max-width: 650px;
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.75;
+}
+/* Toolbar */
+.concept-toolbar {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.concept-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+.concept-count strong {
+  font-size: 1.5rem;
+}
+.concept-count span {
+  opacity: 0.65;
+}
+/* Search */
+.search-wrapper {
+  position: relative;
+  width: min(100%, 350px);
+}
+.search-wrapper input {
+  width: 100%;
+  padding: 0.85rem 2.75rem 0.85rem 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 0.75rem;
+  background: transparent;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.search-wrapper input:focus {
+  border-color: currentColor;
+  box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.12);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  pointer-events: none;
+  opacity: 0.6;
+}
+/* Concept section */
+.concept-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Concept grid */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+/* Concept card */
+.concept-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 1.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.concept-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(128, 128, 128, 0.55);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.concept-card:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+/* Card number */
+.concept-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+
+  height: 2.2rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(128, 128, 128, 0.12);
+}
+/* Card concept */
+.concept-card h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+}
+.concept-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.68;
+}
+
+/* Card footer */
+.concept-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+.concept-level {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+}
+.concept-arrow {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+}
+.concept-card:hover .concept-arrow {
+  transform: translateX(5px);
+}
+
+/* no results */
+.no-results {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.no-results-icon {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+.no-results h2 {
+  margin-bottom: 0.5rem;
+}
+.no-results p {
+  margin: 0;
+  opacity: 0.65;
+}
+
+/* screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .concept-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .concepts-page {
+    padding: 2rem 1rem;
+  }
+  .concept-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .search-wrapper {
+    width: 100%;
+  }
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+  .concept-card {
+    min-height: 200px;
+  }
+}

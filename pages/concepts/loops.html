@@ -1,0 +1,1593 @@
+   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn JavaScript data types including primitive and non-primitive data types with examples, real-life use cases and interview questions."
+    >
+
+    <title>Data Types | JS Playground</title>
+
+   <link rel="stylesheet" href="../../css/style.css">
+    <!-- Variables Page CSS -->
+    <link rel="stylesheet" href="../../css/concept-page.css">
+</head>
+
+
+<body>
+
+  <!-- Header -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo">
+                <span class="logo-mark">Js</span>
+                <span class="logo-text">Playground</span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu"
+                aria-expanded="false" area-controls="mainNavigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+        </div>
+    </header>
+
+   <div class="app-layout">
+        <aside class="sidebar" id="mainNavigation">
+            <nav class="sidebar-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/concepts.html" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+<main class="concept-detail-page">
+
+    <!-- =====================================================
+         BREADCRUMB
+         ===================================================== -->
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+
+        <a href="../concepts.html">
+            Concepts
+        </a>
+
+        <span aria-hidden="true">/</span>
+
+        <span>Loops</span>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONCEPT HEADER
+         ===================================================== -->
+
+    <section class="concept-header">
+
+        <div class="concept-header-number">
+            06
+        </div>
+
+        <div class="concept-header-content">
+
+            <span class="concept-label">
+                JavaScript Fundamentals
+            </span>
+
+            <h1>
+                Loops
+            </h1>
+
+            <p>
+                Learn how JavaScript repeats a block of code efficiently
+                using for, while, do...while, for...of, for...in and
+                modern iteration techniques.
+            </p>
+
+            <div class="concept-meta">
+
+                <span class="meta-badge">
+                    Beginner
+                </span>
+
+                <span class="meta-badge">
+                    Control Flow
+                </span>
+
+                <span class="meta-badge">
+                    Interview Essential
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECTION NAVIGATION
+         ===================================================== -->
+
+    <nav class="section-navigation" aria-label="Concept sections">
+
+        <a href="#definition">Definition</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#types">Types</a>
+        <a href="#examples">Examples</a>
+        <a href="#use-case">Real Life</a>
+        <a href="#interview">Interview</a>
+        <a href="#challenge">Challenge</a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         01. DEFINITION
+         ===================================================== -->
+
+    <section class="concept-section" id="definition">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+                <p class="section-kicker">
+                    Foundation
+                </p>
+
+                <h2>
+                    What are loops?
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="definition-grid">
+
+            <article class="definition-card">
+
+                <span class="definition-icon">?</span>
+
+                <h3>
+                    What?
+                </h3>
+
+                <p>
+                    A loop is a control-flow structure that repeatedly
+                    executes a block of code while a condition is satisfied
+                    or while there are values to iterate over.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⏱</span>
+
+                <h3>
+                    When?
+                </h3>
+
+                <p>
+                    Use loops when the same operation needs to be performed
+                    multiple times, especially when working with arrays,
+                    objects or repeated calculations.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">💡</span>
+
+                <h3>
+                    Why?
+                </h3>
+
+                <p>
+                    Loops prevent duplicate code and make it possible to
+                    process large amounts of data efficiently.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <span class="definition-icon">⚙</span>
+
+                <h3>
+                    How?
+                </h3>
+
+                <p>
+                    JavaScript repeatedly executes the loop body according
+                    to a condition, counter, iterator or collection until
+                    the loop should stop.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         02. SYNTAX
+         ===================================================== -->
+
+    <section class="concept-section" id="syntax">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+                <p class="section-kicker">
+                    Fundamentals
+                </p>
+
+                <h2>
+                    Loop syntax
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="syntax-card">
+
+            <div class="code-header">
+                <span>JavaScript</span>
+            </div>
+
+            <pre><code>for (initialization; condition; update) {
+    // code to execute
+}
+
+
+while (condition) {
+    // code to execute
+}
+
+
+do {
+    // code to execute
+} while (condition);
+
+
+for (const value of iterable) {
+    // code to execute
+}
+
+
+for (const key in object) {
+    // code to execute
+}</code></pre>
+
+        </div>
+
+
+        <div class="syntax-note">
+
+            <strong>Remember:</strong>
+
+            <span>
+                A loop needs a clear stopping condition. If the condition
+                never becomes false, the loop can become an infinite loop.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         03. TYPES OF LOOPS
+         ===================================================== -->
+
+    <section class="concept-section" id="types">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+                <p class="section-kicker">
+                    Core concepts
+                </p>
+
+                <h2>
+                    Types of loops
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FOR LOOP
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 01
+                </span>
+
+                <h3>
+                    for loop
+                </h3>
+
+                <p>
+                    The traditional for loop is useful when you know how
+                    many times you want to execute the code.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>for (let i = 1; i &lt;= 5; i++) {
+    console.log(i);
+}
+
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             WHILE LOOP
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 02
+                </span>
+
+                <h3>
+                    while loop
+                </h3>
+
+                <p>
+                    A while loop continues running as long as its condition
+                    remains true.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>let count = 1;
+
+while (count &lt;= 5) {
+
+    console.log(count);
+
+    count++;
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             DO WHILE
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 03
+                </span>
+
+                <h3>
+                    do...while loop
+                </h3>
+
+                <p>
+                    A do...while loop executes its body at least once
+                    before checking the condition.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>let number = 1;
+
+do {
+
+    console.log(number);
+
+    number++;
+
+} while (number &lt;= 5);</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             FOR OF
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 04
+                </span>
+
+                <h3>
+                    for...of loop
+                </h3>
+
+                <p>
+                    Used to iterate over the values of iterable objects
+                    such as arrays, strings, maps and sets.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const fruits = [
+    "Apple",
+    "Banana",
+    "Mango"
+];
+
+for (const fruit of fruits) {
+
+    console.log(fruit);
+
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             FOR IN
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 05
+                </span>
+
+                <h3>
+                    for...in loop
+                </h3>
+
+                <p>
+                    Used to iterate over enumerable property keys of an
+                    object.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const user = {
+    name: "Amit",
+    age: 25,
+    city: "Delhi"
+};
+
+for (const key in user) {
+
+    console.log(key, user[key]);
+
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             NESTED LOOP
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 06
+                </span>
+
+                <h3>
+                    Nested loops
+                </h3>
+
+                <p>
+                    A loop inside another loop is called a nested loop.
+                    It is commonly used for grids, matrices and
+                    combinations.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>for (let row = 1; row &lt;= 3; row++) {
+
+    for (let column = 1; column &lt;= 3; column++) {
+
+        console.log(
+            `Row ${row}, Column ${column}`
+        );
+
+    }
+
+}</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BREAK AND CONTINUE
+             ================================================= -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Type 07
+                </span>
+
+                <h3>
+                    break and continue
+                </h3>
+
+                <p>
+                    <code>break</code> completely stops a loop, while
+                    <code>continue</code> skips the current iteration and
+                    moves to the next one.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>for (let i = 1; i &lt;= 5; i++) {
+
+    if (i === 3) {
+        continue;
+    }
+
+    console.log(i);
+}
+
+// 1
+// 2
+// 4
+// 5
+
+
+for (let i = 1; i &lt;= 5; i++) {
+
+    if (i === 3) {
+        break;
+    }
+
+    console.log(i);
+}
+
+// 1
+// 2</code></pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         04. LOOP EXAMPLES
+         ===================================================== -->
+
+    <section class="concept-section" id="examples">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+                <p class="section-kicker">
+                    Learn by doing
+                </p>
+
+                <h2>
+                    Common loop examples
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Sum -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 01
+                </span>
+
+                <h3>
+                    Calculate the sum
+                </h3>
+
+                <p>
+                    Use a loop to calculate the total of all numbers in
+                    an array.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const numbers = [10, 20, 30, 40];
+
+let sum = 0;
+
+for (const number of numbers) {
+
+    sum += number;
+
+}
+
+console.log(sum);
+// 100</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- Find maximum -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 02
+                </span>
+
+                <h3>
+                    Find the largest number
+                </h3>
+
+                <p>
+                    A loop can compare every value and keep track of the
+                    largest value found so far.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const numbers = [12, 45, 7, 89, 23];
+
+let largest = numbers[0];
+
+for (const number of numbers) {
+
+    if (number &gt; largest) {
+        largest = number;
+    }
+
+}
+
+console.log(largest);
+// 89</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- Reverse -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="example-number">
+                    Example 03
+                </span>
+
+                <h3>
+                    Reverse a string
+                </h3>
+
+                <p>
+                    A loop can process a string character by character
+                    and build a reversed string.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const text = "JavaScript";
+
+let reversed = "";
+
+for (let i = text.length - 1; i &gt;= 0; i--) {
+
+    reversed += text[i];
+
+}
+
+console.log(reversed);
+// tpircSavaJ</code></pre>
+
+            </div>
+
+        </article>
+
+
+        <!-- Interactive -->
+
+        <article class="interactive-example">
+
+            <div class="interactive-header">
+
+                <div>
+
+                    <span class="example-number">
+                        Interactive
+                    </span>
+
+                    <h3>
+                        Experiment with loops
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="reset-code-btn"
+                    data-reset-editor="loopEditor"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+
+            <label for="loopEditor">
+                JavaScript code
+            </label>
+
+
+            <textarea
+                id="loopEditor"
+                class="code-editor"
+                spellcheck="false"
+            >const numbers = [10, 20, 30, 40];
+
+let total = 0;
+
+for (const number of numbers) {
+    total += number;
+}
+
+console.log("Total:", total);</textarea>
+
+
+            <div class="editor-actions">
+
+                <button
+                    type="button"
+                    class="run-button"
+                    data-run-editor="loopEditor"
+                    data-output="loopOutput"
+                >
+                    ▶ Run Code
+                </button>
+
+
+                <button
+                    type="button"
+                    class="clear-button"
+                    data-clear-output="loopOutput"
+                >
+                    Clear Output
+                </button>
+
+            </div>
+
+
+            <div class="output-panel">
+
+                <div class="output-header">
+                    <span>
+                        Console Output
+                    </span>
+                </div>
+
+                <pre id="loopOutput">Click "Run Code" to see the output.</pre>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         05. REAL LIFE USE CASE
+         ===================================================== -->
+
+    <section class="concept-section" id="use-case">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+                <p class="section-kicker">
+                    Practical JavaScript
+                </p>
+
+                <h2>
+                    Real-life use case
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="use-case-card">
+
+            <div class="use-case-text">
+
+                <span class="use-case-label">
+                    E-Commerce
+                </span>
+
+                <h3>
+                    Calculate shopping cart total
+                </h3>
+
+                <p>
+                    Shopping applications commonly loop through cart items
+                    to calculate the subtotal, apply discounts and prepare
+                    the final amount.
+                </p>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+                    <span>JavaScript</span>
+                </div>
+
+                <pre><code>const cart = [
+    {
+        name: "Keyboard",
+        price: 1500,
+        quantity: 2
+    },
+    {
+        name: "Mouse",
+        price: 800,
+        quantity: 1
+    },
+    {
+        name: "Headphones",
+        price: 2000,
+        quantity: 1
+    }
+];
+
+let total = 0;
+
+for (const item of cart) {
+
+    total += item.price * item.quantity;
+
+}
+
+console.log("Cart Total:", total);</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="key-insight">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Interview tip:</strong>
+                Choose the loop based on the problem. Use
+                <code>for...of</code> when you need values from an iterable,
+                <code>for...in</code> for object keys, and a traditional
+                <code>for</code> loop when you need precise control over
+                the index or iteration count.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         06. INTERVIEW QUESTIONS
+         ===================================================== -->
+
+    <section class="concept-section" id="interview">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+                <p class="section-kicker">
+                    Interview preparation
+                </p>
+
+                <h2>
+                    Top 5 interview questions
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="questions-list">
+
+
+            <!-- Question 01 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        01
+                    </span>
+
+                    <span>
+                        What is the difference between for, while and do...while?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        A <code>for</code> loop is commonly used when the
+                        number of iterations or counter logic is known.
+                        A <code>while</code> loop is useful when repetition
+                        depends mainly on a condition. A
+                        <code>do...while</code> loop always executes its
+                        body at least once before checking the condition.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- Question 02 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        02
+                    </span>
+
+                    <span>
+                        What is the difference between for...of and for...in?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        <code>for...of</code> iterates over values of an
+                        iterable, while <code>for...in</code> iterates over
+                        enumerable property keys.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>const fruits = ["Apple", "Mango"];
+
+for (const fruit of fruits) {
+    console.log(fruit);
+}
+
+
+const user = {
+    name: "Amit",
+    age: 25
+};
+
+for (const key in user) {
+    console.log(key);
+}</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- Question 03 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        03
+                    </span>
+
+                    <span>
+                        What is an infinite loop and how can you avoid it?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        An infinite loop occurs when the loop's stopping
+                        condition never becomes false. Make sure the loop
+                        variable or condition changes appropriately.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>let count = 0;
+
+while (count &lt; 5) {
+
+    console.log(count);
+
+    count++;
+}</code></pre>
+
+                    </div>
+
+                    <p>
+                        Here, <code>count++</code> eventually makes the
+                        condition false.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- Question 04 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        04
+                    </span>
+
+                    <span>
+                        What is the difference between break and continue?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        <code>break</code> immediately terminates the loop.
+                        <code>continue</code> skips the rest of the current
+                        iteration and moves to the next iteration.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>for (let i = 1; i &lt;= 5; i++) {
+
+    if (i === 3) {
+        continue;
+    }
+
+    console.log(i);
+}
+
+// 1
+// 2
+// 4
+// 5</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- Question 05 -->
+
+            <details class="question-card">
+
+                <summary>
+
+                    <span class="question-number">
+                        05
+                    </span>
+
+                    <span>
+                        Why should for...in generally not be used for arrays?
+                    </span>
+
+                    <span class="question-icon">
+                        +
+                    </span>
+
+                </summary>
+
+
+                <div class="answer">
+
+                    <p>
+                        <code>for...in</code> is designed for enumerable
+                        property keys, not specifically for array values.
+                        For arrays, <code>for...of</code> is usually clearer
+                        when you need the values.
+                    </p>
+
+
+                    <div class="code-block">
+
+                        <pre><code>const numbers = [10, 20, 30];
+
+for (const number of numbers) {
+
+    console.log(number);
+
+}
+
+// 10
+// 20
+// 30</code></pre>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         07. CODING CHALLENGE
+         ===================================================== -->
+
+    <section class="concept-section" id="challenge">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+                <p class="section-kicker">
+                    Code in an interview
+                </p>
+
+                <h2>
+                    Interview coding challenge
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="challenge-card">
+
+
+            <div class="challenge-description">
+
+                <span class="challenge-label">
+                    Coding Challenge
+                </span>
+
+                <h3>
+                    Find the largest number
+                </h3>
+
+                <p>
+                    Given an array of numbers, use a loop to find and print
+                    the largest number without using
+                    <code>Math.max()</code>.
+                </p>
+
+
+                <div class="expected-output">
+
+                    <h4>
+                        Input
+                    </h4>
+
+                    <pre>[12, 45, 7, 89, 23]</pre>
+
+
+                    <h4>
+                        Expected output
+                    </h4>
+
+                    <pre>Largest: 89</pre>
+
+                </div>
+
+            </div>
+
+
+            <div class="challenge-editor">
+
+                <label for="loopChallengeEditor">
+                    Write your solution
+                </label>
+
+
+                <textarea
+                    id="loopChallengeEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                >const numbers = [12, 45, 7, 89, 23];
+
+let largest = numbers[0];
+
+// Write your loop here
+
+
+console.log("Largest:", largest);
+</textarea>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        data-run-editor="loopChallengeEditor"
+                        data-output="loopChallengeOutput"
+                    >
+                        ▶ Run Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="hint-button"
+                        data-hint-target="loopHint"
+                    >
+                        💡 Hint
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="hint-box"
+                    id="loopHint"
+                    hidden
+                >
+                    Use a <code>for...of</code> loop. Compare every number
+                    with <code>largest</code>. If the current number is
+                    greater, update <code>largest</code>.
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="output-header">
+                        <span>
+                            Console Output
+                        </span>
+                    </div>
+
+                    <pre id="loopChallengeOutput">Run your solution to see the output.</pre>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TAKEAWAY
+         ===================================================== -->
+
+    <section class="takeaway-section">
+
+        <div class="takeaway-card">
+
+            <span class="takeaway-icon">
+                🎯
+            </span>
+
+
+            <div>
+
+                <p class="section-kicker">
+                    Remember
+                </p>
+
+                <h2>
+                    Loops let you process repeated work without repeating code.
+                </h2>
+
+                <p>
+                    Master the traditional <code>for</code> loop first,
+                    then understand <code>while</code>,
+                    <code>do...while</code>, <code>for...of</code> and
+                    <code>for...in</code>. Also understand
+                    <code>break</code>, <code>continue</code> and nested
+                    loops because they frequently appear in interviews.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGINATION
+         ===================================================== -->
+
+    <nav
+        class="concept-pagination"
+        aria-label="Concept pagination"
+    >
+
+        <a
+            href="conditional-statements.html"
+            class="pagination-link"
+        >
+
+            <span>←</span>
+
+            <div>
+
+                <small>
+                    Previous Concept
+                </small>
+
+                <strong>
+                    Conditional Statements
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="functions.html"
+            class="pagination-link next"
+        >
+
+            <div>
+
+                <small>
+                    Next Concept
+                </small>
+
+                <strong>
+                    Functions
+                </strong>
+
+            </div>
+
+            <span>→</span>
+
+        </a>
+
+    </nav>
+
+</main>
+
+   
+   </div>
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+ <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+
+</body>
+
+</html>

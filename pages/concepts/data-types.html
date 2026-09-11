@@ -1,0 +1,1718 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn JavaScript data types including primitive and non-primitive data types with examples, real-life use cases and interview questions."
+    >
+
+    <title>Data Types | JS Playground</title>
+
+   <link rel="stylesheet" href="../../css/style.css">
+    <!-- Variables Page CSS -->
+    <link rel="stylesheet" href="../../css/concept-page.css">
+</head>
+
+
+<body>
+
+  <!-- Header -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo">
+                <span class="logo-mark">Js</span>
+                <span class="logo-text">Playground</span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu"
+                aria-expanded="false" area-controls="mainNavigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+        </div>
+    </header>
+
+   <div class="app-layout">
+        <aside class="sidebar" id="mainNavigation">
+            <nav class="sidebar-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/concepts.html" class="nav-link">
+                            Concepts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/pages/quiz.html" class="nav-link">
+                            Interview Quiz
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#challenges" class="nav-link">
+                            Coding Challenges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#debugging" class="nav-link">
+                            Debugging Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#internals" class="nav-link">
+                            JavaScript Internals
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#performance" class="nav-link">
+                            Performance Lab
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#progress" class="nav-link">
+                            Progress
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="concept-detail-page">
+
+
+        <!-- =================================================
+             BREADCRUMB
+             ================================================= -->
+
+        <nav
+            class="breadcrumb"
+            aria-label="Breadcrumb"
+        >
+
+            <a href="../concepts.html">
+                Concepts
+            </a>
+
+            <span aria-hidden="true">/</span>
+
+            <span>Data Types</span>
+
+        </nav>
+
+
+        <!-- =================================================
+             CONCEPT HEADER
+             ================================================= -->
+
+        <section class="concept-header">
+
+            <div class="concept-header-number">
+                02
+            </div>
+
+
+            <div class="concept-header-content">
+
+                <span class="concept-label">
+                    JavaScript Fundamentals
+                </span>
+
+
+                <h1>
+                    Data Types
+                </h1>
+
+
+                <p>
+                    Understand how JavaScript represents different kinds
+                    of values and learn the difference between primitive
+                    and non-primitive data types.
+                </p>
+
+
+                <div class="concept-meta">
+
+                    <span class="meta-badge">
+                        Beginner
+                    </span>
+
+                    <span class="meta-badge">
+                        Core JavaScript
+                    </span>
+
+                    <span class="meta-badge">
+                        Interview Essential
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT NAVIGATION
+             ================================================= -->
+
+        <nav
+            class="section-navigation"
+            aria-label="Concept sections"
+        >
+
+            <a href="#definition">
+                Definition
+            </a>
+
+            <a href="#types">
+                Types
+            </a>
+
+            <a href="#syntax">
+                Syntax
+            </a>
+
+            <a href="#examples">
+                Examples
+            </a>
+
+            <a href="#use-case">
+                Real Life
+            </a>
+
+            <a href="#comparison">
+                Comparison
+            </a>
+
+            <a href="#interview">
+                Interview
+            </a>
+
+            <a href="#challenge">
+                Challenge
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             01. DEFINITION
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="definition"
+        >
+
+            <div class="section-heading">
+
+                <span>01</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Foundation
+                    </p>
+
+                    <h2>
+                        What are data types?
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="definition-grid">
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        ?
+                    </span>
+
+                    <h3>
+                        What?
+                    </h3>
+
+                    <p>
+                        A data type defines the kind of value stored or
+                        represented by a JavaScript expression.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        ⏱
+                    </span>
+
+                    <h3>
+                        When?
+                    </h3>
+
+                    <p>
+                        Data types matter whenever your program works
+                        with values such as numbers, text, objects,
+                        arrays, booleans or empty values.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        💡
+                    </span>
+
+                    <h3>
+                        Why?
+                    </h3>
+
+                    <p>
+                        JavaScript needs to know what kind of value it is
+                        working with so operations can behave correctly.
+                    </p>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        ⚙
+                    </span>
+
+                    <h3>
+                        How?
+                    </h3>
+
+                    <p>
+                        JavaScript is dynamically typed, so a variable
+                        does not have to be permanently associated with
+                        one data type.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             02. TYPES
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="types"
+        >
+
+            <div class="section-heading">
+
+                <span>02</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Core classification
+                    </p>
+
+                    <h2>
+                        JavaScript data types
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="definition-grid">
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        01
+                    </span>
+
+                    <h3>
+                        String
+                    </h3>
+
+                    <p>
+                        Represents textual data.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const name = "Rahul";</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        02
+                    </span>
+
+                    <h3>
+                        Number
+                    </h3>
+
+                    <p>
+                        Represents numeric values, including integers
+                        and floating-point numbers.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const age = 25;
+const price = 99.99;</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        03
+                    </span>
+
+                    <h3>
+                        BigInt
+                    </h3>
+
+                    <p>
+                        Represents integers larger than the safe range
+                        of the Number type.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const bigNumber = 9007199254740993n;</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        04
+                    </span>
+
+                    <h3>
+                        Boolean
+                    </h3>
+
+                    <p>
+                        Represents a logical value:
+                        <code>true</code> or <code>false</code>.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const isLoggedIn = true;</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        05
+                    </span>
+
+                    <h3>
+                        Undefined
+                    </h3>
+
+                    <p>
+                        Represents a variable that has been declared
+                        but has not been assigned a value.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>let result;
+
+console.log(result);</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        06
+                    </span>
+
+                    <h3>
+                        Null
+                    </h3>
+
+                    <p>
+                        Represents an intentional absence of a value.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const selectedUser = null;</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        07
+                    </span>
+
+                    <h3>
+                        Symbol
+                    </h3>
+
+                    <p>
+                        Creates unique primitive values, commonly useful
+                        as unique object property keys.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const id = Symbol("id");</code></pre>
+
+                    </div>
+
+                </article>
+
+
+                <article class="definition-card">
+
+                    <span class="definition-icon">
+                        08
+                    </span>
+
+                    <h3>
+                        Object
+                    </h3>
+
+                    <p>
+                        Represents collections of related data and
+                        functionality.
+                    </p>
+
+                    <div class="code-block">
+
+                        <pre><code>const user = {
+    name: "Rahul",
+    age: 25
+};</code></pre>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="key-insight">
+
+                <span>📌</span>
+
+                <p>
+                    JavaScript data types are commonly divided into
+                    <strong>primitive</strong> and
+                    <strong>non-primitive</strong> values.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             03. PRIMITIVE VS NON-PRIMITIVE
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="comparison"
+        >
+
+            <div class="section-heading">
+
+                <span>03</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Important distinction
+                    </p>
+
+                    <h2>
+                        Primitive vs non-primitive
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="comparison-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Feature
+                            </th>
+
+                            <th>
+                                Primitive
+                            </th>
+
+                            <th>
+                                Non-Primitive
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Examples
+                            </td>
+
+                            <td>
+                                String, Number, Boolean, BigInt,
+                                Symbol, Undefined, Null
+                            </td>
+
+                            <td>
+                                Object, Array, Function
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Mutable
+                            </td>
+
+                            <td>
+                                No
+                            </td>
+
+                            <td>
+                                Yes
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Stores
+                            </td>
+
+                            <td>
+                                Individual value
+                            </td>
+
+                            <td>
+                                Collections / references
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Compared by
+                            </td>
+
+                            <td>
+                                Value
+                            </td>
+
+                            <td>
+                                Reference
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                </div>
+
+
+                <pre><code>let a = 10;
+let b = 10;
+
+console.log(a === b); // true
+
+
+const user1 = {
+    name: "Rahul"
+};
+
+const user2 = {
+    name: "Rahul"
+};
+
+console.log(user1 === user2); // false</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             04. SYNTAX
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="syntax"
+        >
+
+            <div class="section-heading">
+
+                <span>04</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Working with types
+                    </p>
+
+                    <h2>
+                        Checking data types
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="syntax-card">
+
+                <div class="code-header">
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                </div>
+
+
+                <pre><code>typeof value;</code></pre>
+
+            </div>
+
+
+            <div class="code-block">
+
+                <div class="code-header">
+
+                    <span>
+                        Example
+                    </span>
+
+                </div>
+
+
+                <pre><code>const name = "Rahul";
+const age = 25;
+const active = true;
+
+console.log(typeof name);
+console.log(typeof age);
+console.log(typeof active);</code></pre>
+
+            </div>
+
+
+            <div class="syntax-note">
+
+                <strong>
+                    Important:
+                </strong>
+
+                <span>
+                    <code>typeof null</code> returns
+                    <code>"object"</code>. This is a historical
+                    JavaScript behavior and is a common interview question.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             05. EXAMPLES
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="examples"
+        >
+
+            <div class="section-heading">
+
+                <span>05</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Learn by doing
+                    </p>
+
+                    <h2>
+                        Data type examples
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Example 1 -->
+
+            <article class="example-card">
+
+                <div class="example-content">
+
+                    <span class="example-number">
+                        Example 01
+                    </span>
+
+                    <h3>
+                        Primitive values
+                    </h3>
+
+                    <p>
+                        JavaScript primitive values represent individual
+                        pieces of data.
+                    </p>
+
+                </div>
+
+
+                <div class="code-block">
+
+                    <div class="code-header">
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <pre><code>const name = "Rahul";
+const age = 25;
+const isStudent = true;
+const emptyValue = null;
+
+console.log(typeof name);
+console.log(typeof age);
+console.log(typeof isStudent);
+console.log(typeof emptyValue);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- Example 2 -->
+
+            <article class="example-card">
+
+                <div class="example-content">
+
+                    <span class="example-number">
+                        Example 02
+                    </span>
+
+                    <h3>
+                        Object and array
+                    </h3>
+
+                    <p>
+                        Objects and arrays can contain multiple values
+                        and are reference values.
+                    </p>
+
+                </div>
+
+
+                <div class="code-block">
+
+                    <div class="code-header">
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <pre><code>const user = {
+    name: "Rahul",
+    age: 25
+};
+
+const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript"
+];
+
+console.log(typeof user);
+console.log(typeof skills);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- Example 3 -->
+
+            <article class="example-card">
+
+                <div class="example-content">
+
+                    <span class="example-number">
+                        Example 03
+                    </span>
+
+                    <h3>
+                        Function
+                    </h3>
+
+                    <p>
+                        Functions are callable objects and
+                        <code>typeof</code> reports them as
+                        <code>"function"</code>.
+                    </p>
+
+                </div>
+
+
+                <div class="code-block">
+
+                    <div class="code-header">
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <pre><code>function greet() {
+    return "Hello";
+}
+
+console.log(typeof greet);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- Interactive Example -->
+
+            <article class="interactive-example">
+
+                <div class="interactive-header">
+
+                    <div>
+
+                        <span class="example-number">
+                            Interactive
+                        </span>
+
+                        <h3>
+                            Explore data types
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="reset-code-btn"
+                        id="resetExample"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <label for="exampleEditor">
+                    JavaScript code
+                </label>
+
+
+                <textarea
+                    id="exampleEditor"
+                    class="code-editor"
+                    spellcheck="false"
+                    aria-label="JavaScript code editor"
+                >const name = "Rahul";
+const age = 25;
+const isStudent = true;
+const skills = ["HTML", "CSS", "JavaScript"];
+
+console.log(typeof name);
+console.log(typeof age);
+console.log(typeof isStudent);
+console.log(typeof skills);</textarea>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        id="runExample"
+                    >
+                        ▶ Run Code
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="clear-button"
+                        id="clearExampleOutput"
+                    >
+                        Clear Output
+                    </button>
+
+                </div>
+
+
+                <div class="output-panel">
+
+                    <div class="output-header">
+                        Console Output
+                    </div>
+
+
+                    <pre id="exampleOutput">Click "Run Code" to see the output.</pre>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             06. REAL LIFE USE CASE
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="use-case"
+        >
+
+            <div class="section-heading">
+
+                <span>06</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Practical JavaScript
+                    </p>
+
+                    <h2>
+                        Real-life use case
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="use-case-card">
+
+                <div class="use-case-text">
+
+                    <span class="use-case-label">
+                        User Profile
+                    </span>
+
+
+                    <h3>
+                        User information
+                    </h3>
+
+
+                    <p>
+                        A real application uses different data types
+                        to represent different parts of a user's profile.
+                    </p>
+
+                </div>
+
+
+                <div class="code-block">
+
+                    <div class="code-header">
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <pre><code>const username = "Rahul";
+const age = 25;
+const isPremium = true;
+
+const skills = [
+    "JavaScript",
+    "HTML",
+    "CSS"
+];
+
+const address = {
+    city: "Pune",
+    country: "India"
+};
+
+console.log(username);
+console.log(age);
+console.log(isPremium);
+console.log(skills);
+console.log(address);</code></pre>
+
+                </div>
+
+            </div>
+
+
+            <div class="key-insight">
+
+                <span>💡</span>
+
+                <p>
+                    Choosing the right type helps communicate the
+                    meaning of your data and makes your code easier
+                    to reason about.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             07. INTERVIEW QUESTIONS
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="interview"
+        >
+
+            <div class="section-heading">
+
+                <span>07</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Interview preparation
+                    </p>
+
+                    <h2>
+                        Top 5 interview questions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="questions-list">
+
+
+                <!-- Question 1 -->
+
+                <details class="question-card">
+
+                    <summary>
+
+                        <span class="question-number">
+                            01
+                        </span>
+
+                        <span>
+                            What are the data types in JavaScript?
+                        </span>
+
+                        <span class="question-icon">
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="answer">
+
+                        <p>
+                            JavaScript has primitive and non-primitive
+                            data types.
+                        </p>
+
+                        <p>
+                            Primitive types include:
+                            String, Number, BigInt, Boolean,
+                            Undefined, Null and Symbol.
+                        </p>
+
+                        <p>
+                            Objects are non-primitive values. Arrays
+                            and functions are also objects with
+                            special behavior.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- Question 2 -->
+
+                <details class="question-card">
+
+                    <summary>
+
+                        <span class="question-number">
+                            02
+                        </span>
+
+                        <span>
+                            Is JavaScript statically typed or dynamically typed?
+                        </span>
+
+                        <span class="question-icon">
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="answer">
+
+                        <p>
+                            JavaScript is dynamically typed.
+                            A variable can hold values of different
+                            types at different points in the program.
+                        </p>
+
+
+                        <div class="code-block">
+
+                            <pre><code>let value = 10;
+
+value = "Hello";
+
+value = true;</code></pre>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+                <!-- Question 3 -->
+
+                <details class="question-card">
+
+                    <summary>
+
+                        <span class="question-number">
+                            03
+                        </span>
+
+                        <span>
+                            What is the difference between null and undefined?
+                        </span>
+
+                        <span class="question-icon">
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="answer">
+
+                        <p>
+                            <code>undefined</code> generally indicates
+                            that a value has not been assigned or is
+                            unavailable.
+                        </p>
+
+                        <p>
+                            <code>null</code> is usually assigned
+                            intentionally to represent the absence
+                            of an object or value.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- Question 4 -->
+
+                <details class="question-card">
+
+                    <summary>
+
+                        <span class="question-number">
+                            04
+                        </span>
+
+                        <span>
+                            Why does typeof null return "object"?
+                        </span>
+
+                        <span class="question-icon">
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="answer">
+
+                        <p>
+                            This is a historical behavior of JavaScript.
+                            Although <code>null</code> is a primitive,
+                            <code>typeof null</code> returns
+                            <code>"object"</code>.
+                        </p>
+
+
+                        <div class="code-block">
+
+                            <pre><code>console.log(typeof null);
+
+// "object"</code></pre>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+
+                <!-- Question 5 -->
+
+                <details class="question-card">
+
+                    <summary>
+
+                        <span class="question-number">
+                            05
+                        </span>
+
+                        <span>
+                            What is the difference between primitive and reference values?
+                        </span>
+
+                        <span class="question-icon">
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="answer">
+
+                        <p>
+                            Primitive values are immutable individual
+                            values. Objects are mutable reference values.
+                        </p>
+
+
+                        <div class="code-block">
+
+                            <pre><code>let a = 10;
+let b = a;
+
+b = 20;
+
+console.log(a); // 10
+console.log(b); // 20
+
+
+const user1 = {
+    name: "Rahul"
+};
+
+const user2 = user1;
+
+user2.name = "Amit";
+
+console.log(user1.name); // Amit</code></pre>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             08. INTERVIEW CODING CHALLENGE
+             ================================================= -->
+
+        <section
+            class="concept-section"
+            id="challenge"
+        >
+
+            <div class="section-heading">
+
+                <span>08</span>
+
+                <div>
+
+                    <p class="section-kicker">
+                        Code in an interview
+                    </p>
+
+                    <h2>
+                        Identify the data types
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="challenge-card">
+
+
+                <div class="challenge-description">
+
+                    <span class="challenge-label">
+                        Coding Challenge
+                    </span>
+
+
+                    <h3>
+                        Type detective
+                    </h3>
+
+
+                    <p>
+                        Create variables for a user's name, age,
+                        login status, selected value and skills.
+                        Print the type of every variable using
+                        <code>typeof</code>.
+                    </p>
+
+
+                    <div class="expected-output">
+
+                        <h4>
+                            Expected output
+                        </h4>
+
+
+                        <pre>string
+number
+boolean
+object
+object</pre>
+
+                    </div>
+
+                </div>
+
+
+                <div class="challenge-editor">
+
+                    <label for="challengeEditor">
+                        Write your solution
+                    </label>
+
+
+                    <textarea
+                        id="challengeEditor"
+                        class="code-editor"
+                        spellcheck="false"
+                    >const username = "Rahul";
+const age = 25;
+const isLoggedIn = true;
+const selectedValue = null;
+const skills = ["HTML", "CSS", "JavaScript"];
+
+// Print the type of every variable here
+</textarea>
+
+
+                    <div class="editor-actions">
+
+                        <button
+                            type="button"
+                            class="run-button"
+                            id="runChallenge"
+                        >
+                            ▶ Run Code
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="hint-button"
+                            id="showHint"
+                        >
+                            💡 Hint
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="hint-box"
+                        id="hintBox"
+                        hidden
+                    >
+                        Use
+                        <code>typeof username</code>,
+                        <code>typeof age</code>,
+                        etc. inside
+                        <code>console.log()</code>.
+                    </div>
+
+
+                    <div class="output-panel">
+
+                        <div class="output-header">
+                            Console Output
+                        </div>
+
+
+                        <pre id="challengeOutput">Run your solution to see the output.</pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             QUICK TAKEAWAY
+             ================================================= -->
+
+        <section class="takeaway-section">
+
+            <div class="takeaway-card">
+
+                <span class="takeaway-icon">
+                    🎯
+                </span>
+
+
+                <div>
+
+                    <p class="section-kicker">
+                        Remember
+                    </p>
+
+
+                    <h2>
+                        Know the value before you operate on it.
+                    </h2>
+
+
+                    <p>
+                        JavaScript has seven primitive types plus
+                        objects as the fundamental non-primitive
+                        category. Understanding types is essential
+                        for predicting JavaScript behavior.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PREVIOUS / NEXT
+             ================================================= -->
+
+        <nav
+            class="concept-pagination"
+            aria-label="Concept pagination"
+        >
+
+            <a
+                href="variables.html"
+                class="pagination-link"
+            >
+
+                <span>←</span>
+
+                <div>
+
+                    <small>
+                        Previous Concept
+                    </small>
+
+                    <strong>
+                        Variables
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="type-coercion-conversion.html"
+                class="pagination-link next"
+            >
+
+                <div>
+
+                    <small>
+                        Next Concept
+                    </small>
+
+                    <strong>
+                        Type Coercion & Conversion
+                    </strong>
+
+                </div>
+
+
+                <span>→</span>
+
+            </a>
+
+        </nav>
+
+    </main>
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+ <footer class="site-footer">
+        <div class="container">
+            <p>JS Playground 2026. All rights reserved.😊</p>
+        </div>
+    </footer>
+    
+    <script src="../../app.js"></script>
+    <script src="../../js/concept-page.js"></script>
+
+</body>
+
+</html>
+
